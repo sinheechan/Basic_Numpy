@@ -388,7 +388,7 @@ print(c)
 
 ```python
 # b 각각의 원소에 제곱 연산
-print(b**2)
+print(b2)
 ```
 
 ```python
@@ -396,8 +396,8 @@ print(b**2)
 ```
 
 ```python
-# a 각각의 원소에 *10 연산
-print(10*np.sin(a))
+# a 각각의 원소에 10 연산
+print(10np.sin(a))
 ```
 
 ```python
@@ -417,7 +417,7 @@ print(a<35)
 
 - 2차원 배열을 행렬이라고 생각했을 때 행렬의 여러가지 곱셈이 있다.
 
-- `*` : 각각의 원소끼리 곱셈 (Elementwise product, Hadamard product)
+- `` : 각각의 원소끼리 곱셈 (Elementwise product, Hadamard product)
 - `@` : 행렬 곱셈 (Matrix product)
 - `.dot()` : 행렬 내적 (dot product)
 
@@ -428,7 +428,7 @@ A= np.array( [[1,1],
 B= np.array( [[2,0],
                [3,4]] )
 
-print(A * B)
+print(A  B)
 ```
 
 ```python
@@ -488,7 +488,7 @@ float64
 
 ```python
 # 마찬가지로 복소수 연산 시 complex(복소수)로 upcasting
-d= np.exp(c*1j)
+d= np.exp(c1j)
 print(d)
 ```
 
@@ -515,7 +515,7 @@ complex128
 - `.cumsum()`: 모든 요소의 누적합
 
 ```python
-a= np.arange(8).reshape(2, 4)**2
+a= np.arange(8).reshape(2, 4)2
 print(a)
 ```
 
@@ -617,7 +617,7 @@ print(b.sum(axis=1))
 - Numpy에서 인덱싱과 슬라이싱에 대한 개념은 Python과 기본적으로 동일하다.
 
 ```python
-a= np.arange(10)**3
+a= np.arange(10)3
 print(a)
 ```
 
@@ -656,7 +656,7 @@ print(a)
 # reverse
 a[ : :-1]
 for iin a:
-print(i**(1/3.))
+print(i(1/3.))
 ```
 
 ```python
@@ -678,7 +678,7 @@ print(i**(1/3.))
 
 ```python
 deff(x,y):
-return 10*x+y
+return 10x+y
 
 b= np.fromfunction(f, (5,4), dtype=int)
 print(b)
@@ -783,11 +783,11 @@ for row in b:
 ```
 
 ```python
-> *[0 1 2 3]
+> [0 1 2 3]
   [10 11 12 13]
   [20 21 22 23]
   [30 31 32 33]
-  [40 41 42 43]*
+  [40 41 42 43]
 ```
 
 ```python
@@ -796,7 +796,7 @@ for element in b.flat:
 ```
 
 ```python
-*0
+0
  1
  2
  3
@@ -815,7 +815,7 @@ for element in b.flat:
  40
  41
  42
- 43*
+ 43
 ```
 
 <br/>
@@ -829,15 +829,15 @@ for element in b.flat:
 - 하지만 데이터 원본은 변경시키지 않고 복사하여 연산한 결과가 return 된다.
 
 ```python
-a = np.floor(10*npr.random((3,4)))
+a = np.floor(10npr.random((3,4)))
 
 print(a)
 ```
 
 ```python
-*[[8. 0. 0. 6.]
+[[8. 0. 0. 6.]
   [1. 4. 3. 0.]
-  [0. 3. 1. 9.]]*
+  [0. 3. 1. 9.]]
 ```
 
 ```python
@@ -845,38 +845,38 @@ print(a.shape)
 ```
 
 ```python
-*(3, 4)
+(3, 4)
 ```
 
 ```python
-# 모든 원소를 1차원으로 변경*
+# 모든 원소를 1차원으로 변경
 print(a.ravel())
 ```
 
 ```python
-*[8. 0. 0. 6. 1. 4. 3. 0. 0. 3. 1. 9.]
+[8. 0. 0. 6. 1. 4. 3. 0. 0. 3. 1. 9.]
 ```
 
 ```python
-# [3,4] => [2,6]로 변경*
+# [3,4] => [2,6]로 변경
 print(a.reshape(2,6))
 ```
 
 ```python
-*[[8. 0. 0. 6. 1. 4.]
+[[8. 0. 0. 6. 1. 4.]
   [3. 0. 0. 3. 1. 9.]]
 ```
 
 ```python
-# [3,4]의 전치(transpose)변환으로 [4,3]*
+# [3,4]의 전치(transpose)변환으로 [4,3]
 print(a.T)
 ```
 
 ```python
-*[[8. 1. 0.]
+[[8. 1. 0.]
   [0. 4. 3.]
   [0. 3. 1.]
-  [6. 0. 9.]]*
+  [6. 0. 9.]]
 ```
 
 ```python
@@ -884,7 +884,7 @@ print(a.T.shape)
 ```
 
 ```python
-*(4, 3)*
+(4, 3)
 ```
 
 ```python
@@ -892,7 +892,7 @@ print(a.shape)
 ```
 
 ```python
-*(3, 4)*
+(3, 4)
 ```
 
 <br/>
@@ -916,9 +916,9 @@ print(a)
 ```
 
 ```python
-*[[8. 0. 0. 6.]
+[[8. 0. 0. 6.]
   [1. 4. 3. 0.]
-  [0. 3. 1. 9.]]*
+  [0. 3. 1. 9.]]
 ```
 
 ```python
@@ -927,8 +927,8 @@ print(a)
 ```
 
 ```python
-*[[8. 0. 0. 6. 1. 4.]
-  [3. 0. 0. 3. 1. 9.]]*
+[[8. 0. 0. 6. 1. 4.]
+  [3. 0. 0. 3. 1. 9.]]
 ```
 
 ```python
@@ -936,9 +936,9 @@ print(a.reshape(3,-1))
 ```
 
 ```python
-*[[8. 0. 0. 6.]
+[[8. 0. 0. 6.]
   [1. 4. 3. 0.]
-  [0. 3. 1. 9.]]*
+  [0. 3. 1. 9.]]
 ```
 
 <br/><br/>
@@ -953,45 +953,45 @@ print(a.reshape(3,-1))
 	- `np.hstack()`: axis=1 기준으로 쌓음
 
 ```python
-a = np.floor(10*npr.random((2,2)))
+a = np.floor(10npr.random((2,2)))
 print(a)
 ```
 
 ```python
-*[[1. 4.]
-  [2. 4.]]*
+[[1. 4.]
+  [2. 4.]]
 ```
 
 ```python
-b = np.floor(10*npr.random((2,2)))
+b = np.floor(10npr.random((2,2)))
 print(b)
 ```
 
 ```python
-*[[3. 7.]
+[[3. 7.]
   [3. 7.]]
 ```
 
 ```python
-# [2,2] => [4,2]*
+# [2,2] => [4,2]
 print(np.vstack((a,b)))
 ```
 
 ```python
-*[[1. 4.]
+[[1. 4.]
   [2. 4.]
   [3. 7.]
   [3. 7.]]
 ```
 
 ```python
-# [2,2] => [2,4]*
+# [2,2] => [2,4]
 print(np.hstack((a,b)))
 ```
 
 ```python
-*[[1. 4. 3. 7.]
-  [2. 4. 3. 7.]]*
+[[1. 4. 3. 7.]
+  [2. 4. 3. 7.]]
 ```
 
 <br/><br/>
@@ -1003,37 +1003,37 @@ print(np.hstack((a,b)))
 - `np.hsplit()`을 통해 숫자1개가 들어갈 경우 X개로 등분, 리스트로 넣을 경우 axis=1 기준 인덱스로 데이터를 분할할 수 있습니다.
 
 ```python
-a = np.floor(10*npr.random((2,12)))
+a = np.floor(10npr.random((2,12)))
 print(a)
 ```
 
 ```python
-*[[4. 4. 1. 7. 7. 8. 8. 8. 4. 3. 5. 3.]
+[[4. 4. 1. 7. 7. 8. 8. 8. 4. 3. 5. 3.]
   [9. 8. 7. 5. 6. 8. 9. 6. 9. 5. 4. 7.]]
 ```
 
 ```python
-# [2,12] => [2,4] 데이터 3개로 등분*
+# [2,12] => [2,4] 데이터 3개로 등분
 print(np.hsplit(a, 3))
 ```
 
 ```python
-*[array([[4., 4., 1., 7.],
+[array([[4., 4., 1., 7.],
         [9., 8., 7., 5.]]), array([[7., 8., 8., 8.],
         [6., 8., 9., 6.]]), array([[4., 3., 5., 3.],
         [9., 5., 4., 7.]])]
 ```
 
 ```python
-# [2,12] => [:, :3], [:, 3:4], [:, 4:]로 분할*
+# [2,12] => [:, :3], [:, 3:4], [:, 4:]로 분할
 print(np.hsplit(a, (3,4)))
 ```
 
 ```python
-*[array([[4., 4., 1.],
+[array([[4., 4., 1.],
          [9., 8., 7.]]), array([[7.],
          [5.]]), array([[7., 8., 8., 8., 4., 3., 5., 3.],
-         [6., 8., 9., 6., 9., 5., 4., 7.]])]*
+         [6., 8., 9., 6., 9., 5., 4., 7.]])]
 ```
 
 <br/><br/>
@@ -1053,7 +1053,7 @@ a = np.array([[ 0,  1,  2,  3],
               [ 4,  5,  6,  7],
               [ 8,  9, 10, 11]])
 
-*# 두 개가 사실상 같다. (복사가 아님)*
+# 두 개가 사실상 같다. (복사가 아님)
 ```
 
 ```python
@@ -1063,7 +1063,7 @@ print(b is a)
 ```
 
 ```python
-*True*
+True
 ```
 
 ```python
@@ -1071,7 +1071,7 @@ print(id(a))
 ```
 
 ```python
-*140389588429040*
+140389588429040
 ```
 
 ```python
@@ -1079,7 +1079,7 @@ print(id(b))
 ```
 
 ```python
-*140389588429040*
+140389588429040
 ```
 
 <br/>
@@ -1099,12 +1099,12 @@ print(id(b))
 ```python
 c = a.view()
 
-*# c와 a의 참조값은 다름*
+# c와 a의 참조값은 다름
 print(c is a)
 ```
 
 ```python
-*False*
+False
 ```
 
 ```python
@@ -1113,32 +1113,32 @@ print(a.shape)
 ```
 
 ```python
-*(3, 4)
+(3, 4)
 ```
 
 ```python
-# c의 데이터와 a의 데이터의 참조값은 같음*
+# c의 데이터와 a의 데이터의 참조값은 같음
 c[0, 4] = 1234
 print(a)
 ```
 
 ```python
-*[[   0    1    2    3]
+[[   0    1    2    3]
   [1234    5    6    7]
   [   8    9   10   11]]
 ```
 
 ```python
-# a를 슬라이싱해도 데이터의 참조값은 같음*
+# a를 슬라이싱해도 데이터의 참조값은 같음
 s = a[ : , 1:3]
 s[:] = 10
 print(a)
 ```
 
 ```python
-*[[   0   10   10    3]
+[[   0   10   10    3]
   [1234   10   10    7]
-  [   8   10   10   11]]*
+  [   8   10   10   11]]
 ```
 
 <br/>
@@ -1150,24 +1150,24 @@ print(a)
 ```python
 d = a.copy()
 
-*# a와 d의 참조값은 다름*
+# a와 d의 참조값은 다름
 print(d is a)
 ```
 
 ```python
-*False
+False
 ```
 
 ```python
-# a와 d의 데이터의 참조값도 다름*
+# a와 d의 데이터의 참조값도 다름
 d[0,0] = 9999
 print(a)
 ```
 
 ```python
-*[[   0   10   10    3]
+[[   0   10   10    3]
   [1234   10   10    7]
-  [   8   10   10   11]]*
+  [   8   10   10   11]]
 ```
 
 <br/>
@@ -1187,7 +1187,7 @@ print(a)
         2 b = a[:100].copy()
         3 del a
   ----> 4 print(a)
-  NameError: name 'a' is not defined*
+  NameError: name 'a' is not defined
 ```
 
 <br/><br/>
@@ -1205,11 +1205,11 @@ print(a)
 - 웬만하면 Shape를 같게 맞춘 후에 연산하는 것이 바람직하다는 것을 명심하고 대안으로 학습을 진행한다.
 
 ```python
-np.array([1,2,3,4,5]) * 2
+np.array([1,2,3,4,5])  2
 ```
 
 ```python
-[2,4,6,8,10]*
+[2,4,6,8,10]
 ```
 
 <br/>
@@ -1219,10 +1219,10 @@ np.array([1,2,3,4,5]) * 2
 - 이렇게 계산되는 이유는 Numpy의 브로드 캐스팅의 결과로 내부적으로 아래 변환되어 계산된다.
 
 ```python
-np.array([1,2,3,4,5]) * 2 
+np.array([1,2,3,4,5])  2 
 
-*# Broadcasting*
-np.array([1,2,3,4,5]) * np.array([2,2,2,2,2])
+# Broadcasting
+np.array([1,2,3,4,5])  np.array([2,2,2,2,2])
 ```
 
 <br/>
@@ -1232,31 +1232,31 @@ np.array([1,2,3,4,5]) * np.array([2,2,2,2,2])
 - 만약 각 축의 값이 다르면 브로드캐스팅되어 값이 복사된다. 아래 코드 및 그림을 예시로 든다.
 
 ```python
-print(np.arange(4) * 2)
+print(np.arange(4)  2)
 ```
 
 ```python
-*[0 2 4 6]*
+[0 2 4 6]
 ```
 
 ```python
-print(np.ones((3,4)) * np.arange(4))
+print(np.ones((3,4))  np.arange(4))
 ```
 
 ```python
-*[[0. 1. 2. 3.]
+[[0. 1. 2. 3.]
   [0. 1. 2. 3.]
-  [0. 1. 2. 3.]]*
+  [0. 1. 2. 3.]]
 ```
 
 ```python
-print(np.arange(3).reshape((3,1)) * np.arange(3))
+print(np.arange(3).reshape((3,1))  np.arange(3))
 ```
 
 ```python
-*[[0 0 0]
+[[0 0 0]
   [0 1 2]
-  [0 2 4]]*
+  [0 2 4]]
 ```
 
 <br/>
@@ -1276,12 +1276,12 @@ print(np.arange(3).reshape((3,1)) * np.arange(3))
 - 인덱스를 가진 배열로 인덱싱을 할 수 있다.
 
 ```python
-a = np.arange(12)**2
+a = np.arange(12)2
 print(a)
 ```
 
 ```python
-*[  0   1   4   9  16  25  36  49  64  81 100 121]*
+[  0   1   4   9  16  25  36  49  64  81 100 121]
 ```
 
 ```python
@@ -1290,7 +1290,7 @@ print(a[i])
 ```
 
 ```python
-*[ 1  1  9 64 25]*
+[ 1  1  9 64 25]
 ```
 
 ```python
@@ -1299,8 +1299,8 @@ print(a[j])
 ```
 
 ```python
-*[[ 9 16]
-  [81 49]]*
+[[ 9 16]
+  [81 49]]
 ```
 
 <br/>
@@ -1312,11 +1312,11 @@ print(a[j])
 - 그림을 이해하셨으면 아래 인덱싱 코드들을 설명할 줄 알아야 한다.
 
 ```python
-palette = np.array([[0, 0, 0],         *# black*
-                    [255, 0, 0],       *# red*
-                    [0, 255, 0],       *# green*
-                    [0, 0, 255],       *# blue*
-                    [255, 255, 255]])  *# white*
+palette = np.array([[0, 0, 0],         # black
+                    [255, 0, 0],       # red
+                    [0, 255, 0],       # green
+                    [0, 0, 255],       # blue
+                    [255, 255, 255]])  # white
 
 image = np.array([[0, 1, 2, 0],
                   [0, 3, 4, 0]])
@@ -1325,14 +1325,14 @@ palette[image]
 ```
 
 ```python
-*array([[[  0,   0,   0],
+array([[[  0,   0,   0],
          [255,   0,   0],
          [  0, 255,   0],
          [  0,   0,   0]],
         [[  0,   0,   0],
          [  0,   0, 255],
          [255, 255, 255],
-         [  0,   0,   0]]])*
+         [  0,   0,   0]]])
 ```
 
 ```python
@@ -1341,7 +1341,7 @@ print(a)
 ```
 
 ```python
-*[0 1 2 3 4]*
+[0 1 2 3 4]
 ```
 
 ```python
@@ -1350,7 +1350,7 @@ print(a)
 ```
 
 ```python
-*[0 0 2 0 0]*
+[0 0 2 0 0]
 ```
 
 ```python
@@ -1359,7 +1359,7 @@ print(a)
 ```
 
 ```python
-*[0 1 2 3 4]*
+[0 1 2 3 4]
 ```
 
 ```python
@@ -1368,7 +1368,7 @@ print(a)
 ```
 
 ```python
-*[1 1 3 3 4]*
+[1 1 3 3 4]
 ```
 
 <br/><br/>
@@ -1387,15 +1387,15 @@ print(b)
 ```
 
 ```python
-*[[False False False False]
+[[False False False False]
   [False  True  True  True]
-  [ True  True  True  True]]*
+  [ True  True  True  True]]
 
 print(a[b])
 ```
 
 ```python
-*[ 5  6  7  8  9 10 11]*
+[ 5  6  7  8  9 10 11]
 ```
 
 ```python
@@ -1404,9 +1404,9 @@ print(a)
 ```
 
 ```python
-*[[0 1 2 3]
+[[0 1 2 3]
   [4 0 0 0]
-  [0 0 0 0]]*
+  [0 0 0 0]]
 ```
 
 <br/>
@@ -1429,10 +1429,10 @@ print(ax)
 ```
 
 ```python
-*[[[2]]
+[[[2]]
   [[3]]
   [[4]]
-  [[5]]]*
+  [[5]]]
 ```
 
 ```python
@@ -1440,9 +1440,9 @@ print(bx)
 ```
 
 ```python
-*[[[8]
+[[[8]
    [5]
-   [4]]]*
+   [4]]]
 ```
 
 ```python
@@ -1450,7 +1450,7 @@ print(cx)
 ```
 
 ```python
-*[[[5 4 6 8 3]]]*
+[[[5 4 6 8 3]]]
 ```
 
 ```python
@@ -1458,16 +1458,16 @@ print(ax.shape, bx.shape, cx.shape)
 ```
 
 ```python
-*(4, 1, 1) (1, 3, 1) (1, 1, 5)*
+(4, 1, 1) (1, 3, 1) (1, 1, 5)
 ```
 
 ```python
-result = ax+bx*cx
+result = ax+bxcx
 print(result)
 ```
 
 ```python
-*[[[42 34 50 66 26]
+[[[42 34 50 66 26]
    [27 22 32 42 17]
    [22 18 26 34 14]]
   [[43 35 51 67 27]
@@ -1478,7 +1478,7 @@ print(result)
    [24 20 28 36 16]]
   [[45 37 53 69 29]
    [30 25 35 45 20]
-   [25 21 29 37 17]]]*
+   [25 21 29 37 17]]]
 ```
 
 ```python
@@ -1486,13 +1486,13 @@ print(result[3,2,4])
 ```
 
 ```python
-*17*
+17
 ```
 
 ```python
-print(a[3]+b[2]*c[4])
+print(a[3]+b[2]c[4])
 ```
 
 ```python
-*17*
+17
 ```
