@@ -116,7 +116,9 @@ print(type(a))
 <class 'numpy.ndarray'>
 ```
 
----
+<br/>
+
+![Numpy Basic](image/Numpy_Basic_0.png)
 
 <br/><br/>
 
@@ -286,6 +288,10 @@ print(x)
  72. 73. 74. 75. 76. 77. 78. 79. 80. 81. 82. 83. 84. 85. 86. 87. 88. 89.
  90. 91. 92. 93. 94. 95. 96. 97. 98. 99.]
 ```
+
+<br/>
+
+![Numpy Basic](image/Numpy_Basic_1.png)
 
 <br/>
 
@@ -596,7 +602,11 @@ print(b.sum(axis=1))
 [ 6 22 38]
 ```
 
-![Untitled](Untitled%202.png)
+<br/>
+
+![Numpy Basic](image/Numpy_Basic_2.png)
+
+<br/>
 
 <br/><br/>
 
@@ -887,7 +897,11 @@ print(a.shape)
 
 <br/>
 
-![https://laboputer.github.io/assets/img/ml/python/numpy/4.JPG](https://laboputer.github.io/assets/img/ml/python/numpy/4.JPG)
+<br/>
+
+![Numpy Basic](image/Numpy_Basic_4.png)
+
+<br/>
 
 <br/>
 
