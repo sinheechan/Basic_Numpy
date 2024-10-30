@@ -899,7 +899,7 @@ print(a.shape)
 
 <br/>
 
-![Numpy Basic](image/Numpy_Basic_4.png)
+![Numpy Basic](image/Numpy_Basic_3.jpeg)
 
 <br/>
 
@@ -1261,7 +1261,7 @@ print(np.arange(3).reshape((3,1)) * np.arange(3))
 
 <br/>
 
-![Numpy Basic](image/Numpy_Basic_5.png)
+![Numpy Basic](image/Numpy_Basic_4.jpeg)
 
 <br/>
 
@@ -1305,7 +1305,7 @@ print(a[j])
 
 <br/>
 
-![Numpy Basic](image/Numpy_Basic_6.png)
+![Numpy Basic](image/Numpy_Basic_5.jpeg)
 
 <br/>
 
@@ -1411,7 +1411,7 @@ print(a)
 
 <br/>
 
-![https://laboputer.github.io/assets/img/ml/python/numpy/7.JPG](https://laboputer.github.io/assets/img/ml/python/numpy/7.JPG)
+![Numpy Basic](image/Numpy_Basic_6.jpeg)
 
 <br/>
 
