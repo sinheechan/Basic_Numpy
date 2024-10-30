@@ -1,60 +1,45 @@
-# EP.3 Pandas
-
-목차: ML
-velog 기록 여부: No
-난이도: 실버
-날짜: 2023/11/06
-완성도: 100%
-유형: 이론
-
 # Pandas
 
-> 판다스(Pandas)는 Python에서 DB처럼 테이블 형식의 데이터를 쉽게 처리할 수 있는 라이브러리다. 
-데이터가 테이블 형식(DB, csv 등)으로 이루어진 경우가 많아 데이터 분석 시 자주 사용하게 될 Python 패키지이므로 꼼꼼히 학습을 추천한다.
-> 
+- 판다스(Pandas)는 Python에서 DB처럼 테이블 형식의 데이터를 쉽게 처리할 수 있는 라이브러리다. 
+- 데이터가 테이블 형식(DB, csv 등)으로 이루어진 경우가 많아 데이터 분석 시 자주 사용하게 될 Python 패키지이므로 꼼꼼히 학습을 추천한다.
+  
+<br/>
 
-판다스(Pandas)의 활용영역은 대표적으로 아래와 같다.
+- 판다스(Pandas)의 활용영역은 대표적으로 아래와 같다.
 
-- Python 자료구조와의 호환(List ,Tuple, Dict, NumpyArray 등)
-- 큰 데이터의 빠른 Indexing, Slicing, Sorting 하는 기능
-- 두 데이터 간의 Join(행,열 방향) 기능
-- 데이터의 피봇팅 및 그룹핑
-- 데이터의 통계 및 시각화 기능
-- 외부 데이터를 입력 받아 Pandas 자료구조로 저장 및 출력(CSV, 구분자가 있는 txt, 엑셀데이터, SQL database, XML 등)
+  - Python 자료구조와의 호환(List ,Tuple, Dict, NumpyArray 등)
+  - 큰 데이터의 빠른 Indexing, Slicing, Sorting 하는 기능
+  - 두 데이터 간의 Join(행,열 방향) 기능
+  - 데이터의 피봇팅 및 그룹핑
+  - 데이터의 통계 및 시각화 기능
+  - 외부 데이터를 입력 받아 Pandas 자료구조로 저장 및 출력(CSV, 구분자가 있는 txt, 엑셀데이터, SQL database, XML 등)
 
-## 1. Pandas 시작하기
+<br/><br/>
 
-### 1.1 설치 및 Import
+## 1. 기본 구조
 
-판다스 활용을 위해 아래와 같이 3가지 패키지가 활용된다.
+<br/>
 
-```python
-# 패키지가 없으신 경우, 설치 명령
-pip install pandas
+- 아래 그림처럼 판다스에서는 2가지 오브젝트 `Series` 와 `DataFrame`가 있다.
 
-# 패키지 설치 후 import
-**import** pandas **as** pd
-**import** numpy **as** np
+  - `Series`: 1차원 데이터와 각 데이터의 위치정보를 담는 인덱스로 구성
+  - `DataFrame`: 2차원 데이터와 인덱스, 컬럼으로 구성
 
-*# 시각화 패키지*
-**import** matplotlib.pyplot **as** plt
-**%**matplotlib inline
-```
+- 쉽게 생각하면 `DataFrame`에서 하나의 컬럼만 가지고 있는 것이 `Series`입니다.
 
-### 1.2 기본 구조
+<br />
 
-아래 그림처럼 판다스에서는 2가지 오브젝트 `Series` 와 `DataFrame`가 있다.
+![Pandas Basic](image/Pandas_Basic_0.png)
 
-- `Series`: 1차원 데이터와 각 데이터의 위치정보를 담는 인덱스로 구성
-- `DataFrame`: 2차원 데이터와 인덱스, 컬럼으로 구성
+<br /><br />
 
-쉽게 생각하면 `DataFrame`에서 하나의 컬럼만 가지고 있는 것이 `Series`입니다.
+# 2. Series 와 DataFrame
 
-![Untitled](Untitled.png)
+<br />
 
-## 2. Series 와 DataFrame
+## 2.1 데이터 생성하기
 
-### 2.1 데이터 생성하기
+<br />
 
 `Series`는 어떻게 생성할 수 있을까?
 
@@ -121,7 +106,7 @@ df2= pd.DataFrame({'A':1.,
   3  1.0 2013-01-02  1.0  3  train  foo
 ```
 
-### 2.2 데이터 확인하기
+## 2.2 데이터 확인하기
 
 `DataFrame`은 `head()`, `tail()`의 함수로 처음과 끝의 일부 데이터만 살짝 볼 수 있다. 
 
@@ -256,7 +241,7 @@ df.sort_values(by='B')
   2013-01-05  1.092380  2.841777 -0.125714 -0.760722
 ```
 
-### 2.3 데이터 선택하기
+## 2.3 데이터 선택하기
 
 데이터 가져오기
 
@@ -500,7 +485,7 @@ df2[df2['E'].isin(['two','four'])]
 
 ![Untitled](Untitled%2015.png)
 
-### 2.4 데이터 변경하기
+## 2.4 데이터 변경하기
 
 `DataFrame` 안에 있는 데이터를 변경하려고 한다.
 
@@ -630,7 +615,7 @@ pd.isnull(df1)
 
 ---
 
-### 4.1 통계지표
+## 4.1 통계지표
 
 일반적으로 결측데이터는 빼고 계산한다.
 
@@ -713,7 +698,7 @@ df.apply(**lambda** x: x.max() **-** x.min())
   dtype: float64*
 ```
 
-### 4.2 히스토그램
+## 4.2 히스토그램
 
 `Series` 데이터의 각 값이 어떤 분포를 이루는지 히스토그램 형식으로 볼 수 있다.
 
@@ -739,7 +724,7 @@ s.value_counts()
   dtype: int64*
 ```
 
-### 4.3 문자열 처리
+## 4.3 문자열 처리
 
 `Series`에서 문자열 관련된 함수들은 `.str` 속성에 포함되어 있다.
 
@@ -765,7 +750,7 @@ s.str.lower()
 
 판다스는 `Series`와 `DataFrame` 간에 쉽게 데이터를 합칠 수 있도록 `join`과 `merge`와 같은 연산을 제공합니다.
 
-### 5.1 이어붙이기
+## 5.1 이어붙이기
 
 `concat()`을 이용하여 이어붙이는 연산(Concatenating)을 할 수 있다.
 
@@ -801,7 +786,7 @@ pd.concat(pieces)
   9 -1.262849  0.883082 -0.200222 -0.132803*
 ```
 
-### 5.2 조인
+## 5.2 조인
 
 SQL에서 자주 사용하는 `join` 연산도 제공된다.
 
@@ -900,7 +885,7 @@ df.groupby(['A','B']).sum()
 
 ---
 
-### 7.1 스택 - Stack
+## 7.1 스택 - Stack
 
 먼저 새로운 `DataFrame`을 하나 생성한다.
 
@@ -971,7 +956,7 @@ stacked.unstack(0)
          B -0.464648  0.247615*
 ```
 
-### 7.2 피벗 테이블 - Pivot Tables
+## 7.2 피벗 테이블 - Pivot Tables
 
 우선 `DataFrame`을 하나 생성한다.
 
@@ -1202,7 +1187,7 @@ df.groupby("grade").size()
 
 `DataFrame`을 파일로 생성하거나 파일을 `DataFrame`으로 읽는 방법이다.
 
-### 10.1 CSV
+## 10.1 CSV
 
 `.to_csv()`로 `DataFrame`을 쉽게 csv 파일로 쓸 수 있다.
 
@@ -1230,7 +1215,7 @@ pd.read_csv('foo.csv')
   [1000 rows x 5 columns]*
 ```
 
-### 10.2 HDF5
+## 10.2 HDF5
 
 `to_hdf()`로 HDF5 형식으로 쓸 수 있다.
 
@@ -1258,7 +1243,7 @@ pd.read_hdf('foo.h5','df')
   [1000 rows x 4 columns]*
 ```
 
-### 10.3 Excel
+## 10.3 Excel
 
 `to_excel()`로 xlsx 파일 형식으로 쓸 수 있다.
 
