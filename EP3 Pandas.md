@@ -49,7 +49,9 @@
 
 ```python
 s= pd.Series([1,3,5,np.nan,6,8])
+```
 
+```python
 > 0    1.0
   1    3.0
   2    5.0
@@ -71,11 +73,19 @@ s= pd.Series([1,3,5,np.nan,6,8])
 
 ```python
 dates= pd.date_range('20130101', periods=6)
+```
+
+```python
 > DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
                  '2013-01-05', '2013-01-06'],
                 dtype='datetime64[ns]', freq='D')
+```
 
+```python
 df= pd.DataFrame(np.random.randn(6,4), index=dates, columns=list('ABCD'))
+```
+
+```python
 >                    A         B         C         D
   2013-01-01  1.571507  0.160021 -0.015071 -0.118588
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
@@ -103,7 +113,9 @@ df2= pd.DataFrame({'A':1.,
                    'D':np.array([3]*4,dtype='int32'),
                    'E':pd.Categorical(["test","train","test","train"]),
                    'F':'foo'})
+```
 
+```python
 >      A         B    C  D      E    F
   0  1.0 2013-01-02  1.0  3   test  foo
   1  1.0 2013-01-02  1.0  3  train  foo
@@ -124,15 +136,23 @@ df2= pd.DataFrame({'A':1.,
 ```python
 # 첫번째 행부터 5개(기본값)를 보여줍니다.
 df.head()
+```
+
+```python
 >                   A         B         C         D
   2013-01-01  1.571507  0.160021 -0.015071 -0.118588
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614
   2013-01-04 -0.108757 -0.958267  0.407331  0.187037
   2013-01-05  1.092380  2.841777 -0.125714 -0.760722
+```
 
+```python
 # 마지막 행에서 3개를 보여줍니다.
 df.tail(3)
+```
+
+```python
 >                   A         B         C         D
   2013-01-04 -0.108757 -0.958267  0.407331  0.187037
   2013-01-05  1.092380  2.841777 -0.125714 -0.760722
@@ -149,14 +169,27 @@ df.tail(3)
 
 ```python
 df.index
+```
+
+```python
 > DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
                   '2013-01-05', '2013-01-06'],
                   dtype='datetime64[ns]', freq='D')
+```
 
+```python
 df.columns
-> Index(['A', 'B', 'C', 'D'], dtype='object')
+```
 
+```python
+> Index(['A', 'B', 'C', 'D'], dtype='object')
+```
+
+```python
 df.values
+```
+
+```python
 > [[ 1.571507  0.160021 -0.015071 -0.118588]
    [-1.037697 -0.891196  0.495447  0.453095]
    [-1.682384 -0.026006 -0.152957 -0.212614]
@@ -175,7 +208,9 @@ df.values
 
 ```python
 df.to_numpy()
+```
 
+```python
 > [[ 1.571507  0.160021 -0.015071 -0.118588]
    [-1.037697 -0.891196  0.495447  0.453095]
    [-1.682384 -0.026006 -0.152957 -0.212614]
@@ -199,7 +234,9 @@ df.to_numpy()
 
 ```python
 df.descrbie()
+```
 
+```python
 >               A         B         C         D
   count  6.000000  6.000000  6.000000  6.000000
   mean   0.245593  0.087534 -0.072482 -0.297124
@@ -219,7 +256,9 @@ df.descrbie()
 
 ```python
 df.T
+```
 
+```python
 >    2013-01-01  2013-01-02  2013-01-03  2013-01-04  2013-01-05  2013-01-06
   A    1.571507   -1.037697   -1.682384   -0.108757    1.092380    1.638509
   B    0.160021   -0.891196   -0.026006   -0.958267    2.841777   -0.601126
@@ -236,7 +275,9 @@ df.T
 
 ```python
 df.sort_index(axis=1, ascending=False)
+```
 
+```python
 >                    D         C         B         A
   2013-01-01 -0.118588 -0.015071  0.160021  1.571507
   2013-01-02  0.453095  0.495447 -0.891196 -1.037697
@@ -256,7 +297,9 @@ df.sort_index(axis=1, ascending=False)
 # 'B' 컬럼 기준으로 정렬된다.
 
 df.sort_values(by='B')
+```
 
+```python
 >                    A         B         C         D
   2013-01-04 -0.108757 -0.958267  0.407331  0.187037
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
@@ -280,6 +323,9 @@ df.sort_values(by='B')
 # df.A 또는 df['A'] 로 컬럼의 데이터를 얻을 수 있다.
 
 df['A']
+```
+
+```python
 > 2013-01-01    1.571507
   2013-01-02   -1.037697
   2013-01-03   -1.682384
@@ -303,13 +349,21 @@ df['A']
 # 0번~2번 행을 슬라이싱 한다.
 
 df[0:3]
+```
+
+```python
 >                    A         B         C         D
   2013-01-01  1.571507  0.160021 -0.015071 -0.118588
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614
   20130102 부터 20130104 까지 행을 슬라이싱 합니다.
+```
 
+```python
 df['20130102':'20130104']
+```
+
+```python
 >                    A         B         C         D
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614
@@ -334,6 +388,9 @@ df['20130102':'20130104']
 # 0번 인덱스명으로 데이터 가져오기
 
 df.loc[dates[0]]
+```
+
+```python
 > A    1.571507
   B    0.160021
   C   -0.015071
@@ -351,7 +408,9 @@ df.loc[dates[0]]
 # 행은 전체 선택, 컬럼명은 'A', 'B' 두개 선택하여 가져오기
 
 df.loc[:,['A','B']]
+```
 
+```python
 >                A         B
   2013-01-01  1.571507  0.160021
   2013-01-02 -1.037697 -0.891196
@@ -367,6 +426,9 @@ df.loc[:,['A','B']]
 # 행은 슬라이싱으로 범위 선택, 컬럼명은 'A','B' 선택
 
 df.loc['20130102':'20130104',['A','B']]
+```
+
+```python
 >                A         B
   2013-01-02 -1.037697 -0.891196
   2013-01-03 -1.682384 -0.02600
@@ -383,6 +445,9 @@ df.loc['20130102':'20130104',['A','B']]
 *# 행은 20130102 선택, 컬럼명은 'A', 'B' 선택*
 
 df.loc['20130102',['A','B']]
+```
+
+```python
 > *A   -1.037697
   B   -0.891196
   Name: 2013-01-02 00:00:00, dtype: float64*
@@ -396,6 +461,9 @@ df.loc['20130102',['A','B']]
 *# 행은 첫번째 선택, 컬럼은 'A' 선택*
 
 df.loc[dates[0],'A']
+```
+
+```python
 > *1.571506676720408*
 ```
 
@@ -413,6 +481,9 @@ df.loc[dates[0],'A']
 # 3번 인덱스 행 가져오기
 
 df.iloc[3]
+```
+
+```python
 > A   -0.108757
   B   -0.958267
   C    0.407331
@@ -430,6 +501,9 @@ df.iloc[3]
 *# 3~4번 인덱스 행, 0~1번 컬럼 값 가져오기*
 
 df.iloc[3:5,0:2]
+```
+
+```python
 >                 *A         B
   2013-01-04 -0.108757 -0.958267
   2013-01-05  1.092380  2.841777*
@@ -439,6 +513,9 @@ df.iloc[3:5,0:2]
 *# 1,2,4번 인덱스 행과 0,2번 인덱스 컬럼 가져오기*
 
 df.iloc[[1,2,4],[0,2]]
+```
+
+```python
 >                 *A         C
   2013-01-02 -1.037697  0.495447
   2013-01-03 -1.682384 -0.152957
@@ -455,6 +532,9 @@ df.iloc[[1,2,4],[0,2]]
 *# 1~2번 인덱스 행과 전체 컬럼 값 가져오기*
 
 df.iloc[1:3,:]
+```
+
+```python
 >                *A         B         C         D
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614*
@@ -464,6 +544,9 @@ df.iloc[1:3,:]
 *# 전체 행과 1~2번 인덱스 컬럼 값 가져오기*
 
 df.iloc[:,1:3]
+```
+
+```python
 >                 *B         C
   2013-01-01  0.160021 -0.015071
   2013-01-02 -0.891196  0.495447
@@ -482,10 +565,18 @@ df.iloc[:,1:3]
 ```python
 # 1번 행, 1번 컬럼 값 가져오기
 df.iloc[1,1]
-> -0.89119558600132898
+```
 
+```python
+> -0.89119558600132898
+```
+
+```python
 # 위와 동일하지만 스칼라값을 가져오는 속도가 .iat이 빠르다고 합니다.
 df.iat[1,1]
+```
+
+```python
 > 0.89119558600132898
 ```
 
@@ -501,6 +592,9 @@ df.iat[1,1]
 
 ```python
 df[df['A']> 0]
+```
+
+```python
 
 >                 A         B         C         D
   2013-01-01  1.571507  0.160021 -0.015071 -0.118588
@@ -518,7 +612,9 @@ df[df['A']> 0]
 
 ```python
 df[df> 0]
+```
 
+```python
 >                    A         B         C         D
   2013-01-01  1.571507  0.160021       NaN       NaN
   2013-01-02       NaN       NaN  0.495447  0.453095
@@ -542,7 +638,9 @@ df2 **=** df.copy()
 
 *# 새로운 컬럼 E에 값을 넣는다.*
 df2['E'] **=** ['one','one', 'two','three','four','three']
+```
 
+```python
 >                 *A         B         C         D       E
   2013-01-01  1.571507  0.160021 -0.015071 -0.118588    one
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095    one
@@ -550,11 +648,15 @@ df2['E'] **=** ['one','one', 'two','three','four','three']
   2013-01-04 -0.108757 -0.958267  0.407331  0.187037  three
   2013-01-05  1.092380  2.841777 -0.125714 -0.760722   four
   2013-01-06  1.638509 -0.601126 -1.043931 -1.330950  three
+```
 
+```python
 # 컬럼 E에 들어있는것만 필터링합니다.*
 
 df2[df2['E'].isin(['two','four'])]
+```
 
+```python
 >                 *A         B         C         D     E
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614   two
   2013-01-05  1.092380  2.841777 -0.125714 -0.760722  four*
@@ -576,6 +678,9 @@ df2[df2['E'].isin(['two','four'])]
 
 ```python
 s1= pd.Series([1,2,3,4,5,6], index=pd.date_range('20130102',periods=6))
+```
+
+```python
 > 2013-01-02    1
   2013-01-03    2
   2013-01-04    3
@@ -583,7 +688,9 @@ s1= pd.Series([1,2,3,4,5,6], index=pd.date_range('20130102',periods=6))
   2013-01-06    5
   2013-01-07    6
   Freq: D, dtype: int64
+```
 
+```python
 # Series를 'F' 컬럼에 넣는다.
 df['F']= s1
 ```
@@ -607,6 +714,9 @@ df.iat[0,1]= 0
 df.loc[:,'D']= np.array([5]* len(df))
 
 df
+```
+
+```python
 >                 A         B         C     D   F
   2013-01-01  0.000000  0.000000 -0.015071  5  NaN
   2013-01-02 -1.037697 -0.891196  0.495447  5  1.0
@@ -632,6 +742,9 @@ df2= df.copy()
 df2[df2> 0]=-df2
 
 df2
+```
+
+```python
 >                 A         B         C     D   F
   2013-01-01  0.000000  0.000000 -0.015071 -5  NaN
   2013-01-02 -1.037697 -0.891196 -0.495447 -5 -1.0
@@ -666,6 +779,9 @@ df1 **=** df.reindex(index**=**dates[0:4], columns**=**list(df.columns) **+** ['
 df1.loc[dates[0]:dates[1],'E'] **=** 1
 
 df1
+```
+
+```python
 >                 *A         B         C     D   F    E
   2013-01-01  0.000000  0.000000 -0.015071  5  NaN  1.0
   2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0
@@ -681,6 +797,9 @@ df1
 
 ```python
 df1.dropna(how**=**'any')
+```
+
+```python
 
 >                 *A         B         C     D    F    E
   2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0*
@@ -692,7 +811,9 @@ df1.dropna(how**=**'any')
 
 ```python
 df1.fillna(value**=**5)
+```
 
+```python
 >                 *A         B         C     D    F    E
   2013-01-01  0.000000  0.000000 -0.015071  5  5.0  1.0
   2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0
@@ -706,7 +827,9 @@ df1.fillna(value**=**5)
 
 ```python
 pd.isnull(df1)
+```
 
+```python
 >                *A      B      C      D      F      E
   2013-01-01  False  False  False  False   True  False
   2013-01-02  False  False  False  False  False  False
@@ -730,7 +853,9 @@ pd.isnull(df1)
 
 ```python
 df.mean()
+```
 
+```python
 > *A   -0.016325
   B    0.060864
   C   -0.072482
@@ -747,7 +872,9 @@ df.mean()
 *# axis = 1로 평균 구하기*
 
 df.mean(1)
+```
 
+```python
 > *2013-01-01    1.246232
   2013-01-02    0.913311
   2013-01-03    1.027731
@@ -764,6 +891,9 @@ df.mean(1)
 ```python
 *# 데이터 시프트 연산 (2개씩 밀립니다.)*
 s **=** pd.Series([1,3,5,np.nan,6,8], index**=**dates).shift(2)
+```
+
+```python
 > *2013-01-01    NaN
   2013-01-02    NaN
   2013-01-03    1.0
@@ -771,9 +901,14 @@ s **=** pd.Series([1,3,5,np.nan,6,8], index**=**dates).shift(2)
   2013-01-05    5.0
   2013-01-06    NaN
   Freq: D, dtype: float64
+```
 
+```python
 # DataFrame와 Series를 index 축 기준으로 빼기 연산*
 df.sub(s, axis**=**'index')
+```
+
+```python
 >                    *A         B         C    D    F
   2013-01-01       NaN       NaN       NaN  NaN  NaN
   2013-01-02       NaN       NaN       NaN  NaN  NaN
@@ -793,6 +928,9 @@ df.sub(s, axis**=**'index')
 *# 각 컬럼별(기본 axis = 0은 컬럼 기준) 누적합을 구합니다.*
 
 df.apply(np.cumsum)
+```
+
+```python
 >                    *A         B         C   D     F
   2013-01-01  0.000000  0.000000 -0.015071   5   NaN
   2013-01-02 -1.037697 -0.891196  0.480376  10   1.0
@@ -801,8 +939,13 @@ df.apply(np.cumsum)
   2013-01-05 -1.736458  0.966308  0.609036  25  10.0
   2013-01-06 -0.097949  0.365182 -0.434895  30  15.0
   lambda 식을 이용하여 max-min의 값을 구합니다.*
+```
 
+```python
 df.apply(**lambda** x: x.max() **-** x.min())
+```
+
+```python
 > *A    3.320893
   B    3.800044
   C    1.539378
@@ -821,6 +964,9 @@ df.apply(**lambda** x: x.max() **-** x.min())
 
 ```python
 s **=** pd.Series(np.random.randint(0, 7, size**=**10))
+```
+
+```python
 > *0    2
   1    0
   2    5
@@ -832,8 +978,13 @@ s **=** pd.Series(np.random.randint(0, 7, size**=**10))
   8    3
   9    5
   dtype: int64*
+```
 
+```python
 s.value_counts()
+```
+
+```python
 > *5    4
   2    3
   3    2
@@ -855,6 +1006,9 @@ s.value_counts()
 s **=** pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat'])
 
 s.str.lower()
+```
+
+```python
 *# 0       a
 # 1       b
 # 2       c
@@ -885,6 +1039,9 @@ s.str.lower()
 
 ```python
 df **=** pd.DataFrame(np.random.randn(10, 4))
+```
+
+```python
 >        *0         1         2         3
   0 -0.234987 -0.373520 -2.331217 -0.011025
   1 -0.594832 -0.056876  0.511321 -0.637962
@@ -896,12 +1053,17 @@ df **=** pd.DataFrame(np.random.randn(10, 4))
   7  0.479388 -0.369535 -0.939108  1.142691
   8  0.765936  0.750054  0.634936 -1.405519
   9 -1.262849  0.883082 -0.200222 -0.132803
+```
 
+```python
 # 위에서 생성한 DataFrame을 여러개로 분리합니다.*
 pieces **=** [df[:3], df[3:7], df[7:]]
 
 *# concat()을 이용하여 다시 이어붙일 수 있습니다.*
 pd.concat(pieces)
+```
+
+```python
 >           *0         1         2         3
   0 -0.234987 -0.373520 -2.331217 -0.011025
   1 -0.594832 -0.056876  0.511321 -0.637962
@@ -925,17 +1087,30 @@ pd.concat(pieces)
 
 ```python
 left **=** pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
+```
+
+```python
 >    *key  lval
   0  foo     1
   1  foo     2*
+```
 
+```python
 right **=** pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
+```
+
+```python
 >    *key  rval
   0  foo     4
   1  foo     5
+```
 
+```python
 # 위에서 생성한 left, right를 'key' 컬럼값 기준으로 조인합니다.*
 pd.merge(left, right, on**=**'key')
+```
+
+```python
 >    *key  lval  rval
   0  foo     1     4
   1  foo     1     5
@@ -949,16 +1124,29 @@ pd.merge(left, right, on**=**'key')
 
 ```python
 left **=** pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1, 2]})
+```
+
+```python
 >   *key	 lval
   0	foo	    1
   1	bar	    2*
+```
 
+```python
 right **=** pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4, 5]})
+```
+
+```python
 >   *key	 rval
   0	foo	    4
   1	bar	    5*
+```
 
+```python
 pd.merge(left, right, on**=**'key')
+```
+
+```python
 >   *key	 lval	 rval
   0	foo	    1	    4
   1	bar	    2	    5*
@@ -984,7 +1172,9 @@ df **=** pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', '
                                     'B' : ['one', 'one', 'two', 'three','two', 'two', 'one', 'three'],
                                     'C' : np.random.randn(8),
                                     'D' : np.random.randn(8)})
+```
 
+```python
 >      *A      B      C         D
   0  foo    one -0.740768  2.281787
   1  bar    one -0.501289  1.099814
@@ -1003,14 +1193,21 @@ df **=** pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', '
 ```python
 *# A 컬럼이 같은 것끼리 묶고, sum()*
 df.groupby('A').sum()
+```
+
+```python
 >          *C         D
   A                      
   bar -2.218387  0.822278
   foo  1.662263  0.244406
+```
 
+```python
 # 'A기준으로 묶고'. 'B' 기준으로 다시 묶은 후 sum()*
 df.groupby(['A','B']).sum()
+```
 
+```python
 >                *C         D
   A   B                        
   bar one   -0.501289  1.099814
@@ -1044,6 +1241,9 @@ index **=** pd.MultiIndex.from_tuples(tuples, names**=**['first', 'second'])
 df **=** pd.DataFrame(np.random.randn(8, 2), index**=**index, columns**=**['A', 'B'])
 
 df2 **=** df[:4]
+```
+
+```python
 
 >                   *A         B
   first second                    
@@ -1053,10 +1253,15 @@ df2 **=** df[:4]
         two     0.490648  0.247615*
 ```
 
+<br/>
+
 - `DataFrame`의 `stack()`은 모든 데이터들을 인덱스 레벨로 변형한다. 이를 압축(compresses)한다고 표현한다.
 
 ```python
 stacked **=** df2.stack()
+```
+
+```python
 > *first  second   
   bar    one     A    0.438217
                  B   -0.418822
@@ -1076,24 +1281,37 @@ stacked **=** df2.stack()
 ```python
 *# 원래 상태로 되돌립니다. (레벨 -1)*
 stacked.unstack()
+```
+
+```python
 >                      *A         B
   first second                    
   bar   one     0.438217 -0.418822
         two     1.034927 -0.464648
   baz   one     0.463575 -0.141918
         two     0.490648  0.247615
+```
 
+```python
 # 레벨1은 second 인덱스가 해제되어 one과 two 컬럼이 생깁니다.*
 stacked.unstack(1)
+```
+
+```python
 > *second        one       two
   first                      
   bar   A  0.438217  1.034927
         B -0.418822 -0.464648
   baz   A  0.463575  0.490648
         B -0.141918  0.247615
+```
 
+```python
 # 레벨0은 first 인덱스가 해제되어 bar와 baz 컬럼이 생깁니다.*
 stacked.unstack(0)
+```
+
+```python
 > *first          bar       baz
   second                      
   one    A  0.438217  0.463575
@@ -1116,7 +1334,9 @@ df **=** pd.DataFrame({'A' : ['one', 'one', 'two', 'three'] ***** 3,
                    'C' : ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] ***** 2,
                    'D' : np.random.randn(12),
                    'E' : np.random.randn(12)})
+```
 
+```python
 >         *A  B    C         D         E
   0     one  A  foo -0.268332 -1.378239
   1     one  B  foo -1.168934  0.263587
@@ -1138,7 +1358,9 @@ df **=** pd.DataFrame({'A' : ['one', 'one', 'two', 'three'] ***** 3,
 
 ```python
 pd.pivot_table(df, values**=**'D', index**=**['A', 'B'], columns**=**['C'])
+```
 
+```python
 > *C             bar       foo
   A     B                    
   one   A  0.516837 -0.268332
@@ -1173,6 +1395,9 @@ ts **=** pd.Series(np.random.randint(0, 500, len(rng)), index**=**rng)
 
 *# 5분 단위로 샘플링하여 sum()*
 ts.resample('5Min').sum()
+```
+
+```python
 > *2012-01-01    23289
   Freq: 5T, dtype: int32*
 ```
@@ -1184,17 +1409,23 @@ ts.resample('5Min').sum()
 ```python
 rng **=** pd.date_range('3/6/2012 00:00', periods**=**5, freq**=**'D')
 ts **=** pd.Series(np.random.randn(len(rng)), rng)
+```
 
+```python
 > *2012-03-06   -0.104793
   2012-03-07    1.151961
   2012-03-08    0.504693
   2012-03-09   -0.758065
   2012-03-10   -0.400617
   Freq: D, dtype: float64
+```
 
+```python
 # 표준시(UTC)로 변경*
 ts_utc **=** ts.tz_localize('UTC')
+```
 
+```python
 > *2012-03-06 00:00:00+00:00   -0.104793
   2012-03-07 00:00:00+00:00    1.151961
   2012-03-08 00:00:00+00:00    0.504693
@@ -1206,7 +1437,9 @@ ts_utc **=** ts.tz_localize('UTC')
 ```python
 *# US 동부 시각으로 변경*
 ts_utc.tz_convert('US/Eastern')
+```
 
+```python
 > *2012-03-05 19:00:00-05:00   -0.104793
   2012-03-06 19:00:00-05:00    1.151961
   2012-03-07 19:00:00-05:00    0.504693
@@ -1224,22 +1457,35 @@ ts_utc.tz_convert('US/Eastern')
 rng **=** pd.date_range('1/1/2012', periods**=**5, freq**=**'M')
 
 ts **=** pd.Series(np.random.randn(len(rng)), index**=**rng)
+```
+
+```python
 > *2012-01-31   -0.087643
   2012-02-29    1.782097
   2012-03-31   -0.485397
   2012-04-30    2.536808
   2012-05-31    3.062771
   Freq: M, dtype: float64*
+```
 
+```python
 ps **=** ts.to_period()
+```
+
+```python
 > *2012-01   -0.087643
   2012-02    1.782097
   2012-03   -0.485397
   2012-04    2.536808
   2012-05    3.062771
   Freq: M, dtype: float64*
+```
 
+```python
 ps.to_timestamp()
+```
+
+```python
 > *2012-01-01   -0.087643
   2012-02-01    1.782097
   2012-03-01   -0.485397
@@ -1259,6 +1505,9 @@ ts **=** pd.Series(np.random.randn(len(prng)), prng)
 ts.index **=** (prng.asfreq('M', 'e') **+** 1).asfreq('H', 's') **+** 9
 
 ts.head()
+```
+
+```python
 > *1990-03-01 09:00    1.318669
   1990-06-01 09:00   -0.094259
   1990-09-01 09:00    0.076941
@@ -1284,6 +1533,9 @@ df **=** pd.DataFrame({"id":[1,2,3,4,5,6], "raw_grade":['a', 'b', 'b', 'a', 'a',
 df["grade"] **=** df["raw_grade"].astype("category")
 
 df["grade"]
+```
+
+```python
 > *0    a
   1    b
   2    b
@@ -1308,7 +1560,9 @@ df["grade"].cat.categories **=** ["very good", "good", "very bad"]
 
 ```python
 df["grade"] **=** df["grade"].cat.set_categories(["very bad", "bad", "medium", "good", "very good"])
+```
 
+```python
 > *0    very good
   1         good
   2         good
@@ -1325,7 +1579,9 @@ df["grade"] **=** df["grade"].cat.set_categories(["very bad", "bad", "medium", "
 
 ```python
 df.sort_values(by**=**"grade")
+```
 
+```python
 >    *id raw_grade      grade
   5   6         e   very bad
   1   2         b       good
@@ -1341,7 +1597,9 @@ df.sort_values(by**=**"grade")
 
 ```python
 df.groupby("grade").size()
+```
 
+```python
 > *grade
   very bad     1
   bad          0
@@ -1375,7 +1633,9 @@ df.to_csv('foo.csv')
 
 ```python
 pd.read_csv('foo.csv')
+```
 
+```python
 >      *Unnamed: 0          A          B         C          D
   0    2000-01-01   0.361164   0.270283 -0.567327  -1.045564
   1    2000-01-02  -0.119395   0.735437  0.147388  -2.754982
@@ -1408,7 +1668,9 @@ df.to_hdf('foo.h5','df')
 
 ```python
 pd.read_hdf('foo.h5','df')
+```
 
+```python
 >                  *A          B         C          D
   2000-01-01   0.361164   0.270283 -0.567327  -1.045564
   2000-01-02  -0.119395   0.735437  0.147388  -2.754982
@@ -1442,7 +1704,9 @@ df.to_excel('foo.xlsx', sheet_name**=**'Sheet1')
 
 ```python
 pd.read_excel('foo.xlsx', 'Sheet1', index_col**=**None, na_values**=**['NA'])
+```
 
+```python
 >     *Unnamed: 0          A          B         C          D
   0   2000-01-01   0.361164   0.270283 -0.567327  -1.045564
   1   2000-01-02  -0.119395   0.735437  0.147388  -2.754982
