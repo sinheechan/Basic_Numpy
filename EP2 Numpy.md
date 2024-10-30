@@ -1261,9 +1261,9 @@ print(np.arange(3).reshape((3,1)) * np.arange(3))
 
 <br/>
 
-![https://laboputer.github.io/assets/img/ml/python/numpy/5.JPG](https://laboputer.github.io/assets/img/ml/python/numpy/5.JPG)
+![Numpy Basic](image/Numpy_Basic_5.png)
 
-<br/><br/>
+<br/>
 
 ## 4. Indexing
 
@@ -1305,7 +1305,7 @@ print(a[j])
 
 <br/>
 
-![https://laboputer.github.io/assets/img/ml/python/numpy/6.JPG](https://laboputer.github.io/assets/img/ml/python/numpy/6.JPG)
+![Numpy Basic](image/Numpy_Basic_6.png)
 
 <br/>
 
