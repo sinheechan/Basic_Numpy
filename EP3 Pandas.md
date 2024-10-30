@@ -110,7 +110,7 @@ df= pd.DataFrame(np.random.randn(6,4), index=dates, columns=list('ABCD'))
 df2= pd.DataFrame({'A':1.,
                    'B':pd.Timestamp('20130102'),
                    'C':pd.Series(1,index=list(range(4)),dtype='float32'),
-                   'D':np.array([3]*4,dtype='int32'),
+                   'D':np.array([3]4,dtype='int32'),
                    'E':pd.Categorical(["test","train","test","train"]),
                    'F':'foo'})
 ```
@@ -444,15 +444,15 @@ df.loc['20130102':'20130104',['A','B']]
 <br/>
 
 ```python
-*# 행은 20130102 선택, 컬럼명은 'A', 'B' 선택*
+# 행은 20130102 선택, 컬럼명은 'A', 'B' 선택
 
 df.loc['20130102',['A','B']]
 ```
 
 ```python
-> *A   -1.037697
+> A   -1.037697
   B   -0.891196
-  Name: 2013-01-02 00:00:00, dtype: float64*
+  Name: 2013-01-02 00:00:00, dtype: float64
 ```
 
 <br/>
@@ -460,13 +460,13 @@ df.loc['20130102',['A','B']]
 - 인덱스명, 컬럼명을 하나씩 선택하면 스칼라값을 가져올 수 있다.
 
 ```python
-*# 행은 첫번째 선택, 컬럼은 'A' 선택*
+# 행은 첫번째 선택, 컬럼은 'A' 선택
 
 df.loc[dates[0],'A']
 ```
 
 ```python
-> *1.571506676720408*
+> 1.571506676720408
 ```
 
 <br/>
@@ -500,28 +500,28 @@ df.iloc[3]
 <br/>
 
 ```python
-*# 3~4번 인덱스 행, 0~1번 컬럼 값 가져오기*
+# 3~4번 인덱스 행, 0~1번 컬럼 값 가져오기
 
 df.iloc[3:5,0:2]
 ```
 
 ```python
->                 *A         B
+>                 A         B
   2013-01-04 -0.108757 -0.958267
-  2013-01-05  1.092380  2.841777*
+  2013-01-05  1.092380  2.841777
 ```
 
 ```python
-*# 1,2,4번 인덱스 행과 0,2번 인덱스 컬럼 가져오기*
+# 1,2,4번 인덱스 행과 0,2번 인덱스 컬럼 가져오기
 
 df.iloc[[1,2,4],[0,2]]
 ```
 
 ```python
->                 *A         C
+>                 A         C
   2013-01-02 -1.037697  0.495447
   2013-01-03 -1.682384 -0.152957
-  2013-01-05  1.092380 -0.125714*
+  2013-01-05  1.092380 -0.125714
 ```
 
 <br/>
@@ -531,31 +531,31 @@ df.iloc[[1,2,4],[0,2]]
 <br/>
 
 ```python
-*# 1~2번 인덱스 행과 전체 컬럼 값 가져오기*
+# 1~2번 인덱스 행과 전체 컬럼 값 가져오기
 
 df.iloc[1:3,:]
 ```
 
 ```python
->                *A         B         C         D
+>                A         B         C         D
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095
-  2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614*
+  2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614
 ```
 
 ```python
-*# 전체 행과 1~2번 인덱스 컬럼 값 가져오기*
+# 전체 행과 1~2번 인덱스 컬럼 값 가져오기
 
 df.iloc[:,1:3]
 ```
 
 ```python
->                 *B         C
+>                 B         C
   2013-01-01  0.160021 -0.015071
   2013-01-02 -0.891196  0.495447
   2013-01-03 -0.026006 -0.152957
   2013-01-04 -0.958267  0.407331
   2013-01-05  2.841777 -0.125714
-  2013-01-06 -0.601126 -1.043931*
+  2013-01-06 -0.601126 -1.043931
 ```
 
 <br/>
@@ -635,15 +635,15 @@ df[df> 0]
 - `isin()`을 이용하여 필터링을 할 수 있다.
 
 ```python
-*# df를 복사한다..*
-df2 **=** df.copy()
+# df를 복사한다..
+df2 = df.copy()
 
-*# 새로운 컬럼 E에 값을 넣는다.*
-df2['E'] **=** ['one','one', 'two','three','four','three']
+# 새로운 컬럼 E에 값을 넣는다.
+df2['E'] = ['one','one', 'two','three','four','three']
 ```
 
 ```python
->                 *A         B         C         D       E
+>                 A         B         C         D       E
   2013-01-01  1.571507  0.160021 -0.015071 -0.118588    one
   2013-01-02 -1.037697 -0.891196  0.495447  0.453095    one
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614    two
@@ -653,15 +653,15 @@ df2['E'] **=** ['one','one', 'two','three','four','three']
 ```
 
 ```python
-# 컬럼 E에 들어있는것만 필터링합니다.*
+# 컬럼 E에 들어있는것만 필터링합니다.
 
 df2[df2['E'].isin(['two','four'])]
 ```
 
 ```python
->                 *A         B         C         D     E
+>                 A         B         C         D     E
   2013-01-03 -1.682384 -0.026006 -0.152957 -0.212614   two
-  2013-01-05  1.092380  2.841777 -0.125714 -0.760722  four*
+  2013-01-05  1.092380  2.841777 -0.125714 -0.760722  four
 ```
 
 <br/>
@@ -713,7 +713,7 @@ df.at[dates[0],'A']= 0
 df.iat[0,1]= 0
 
 # 전체 인덱스, 'D' 컬럼 데이터를 변경
-df.loc[:,'D']= np.array([5]* len(df))
+df.loc[:,'D']= np.array([5] len(df))
 
 df
 ```
@@ -777,18 +777,18 @@ df2
 - 먼저 결측 데이터를 만들기 위해 ‘E’ 컬럼을 생성한다.
 
 ```python
-df1 **=** df.reindex(index**=**dates[0:4], columns**=**list(df.columns) **+** ['E'])
-df1.loc[dates[0]:dates[1],'E'] **=** 1
+df1 = df.reindex(index=dates[0:4], columns=list(df.columns) + ['E'])
+df1.loc[dates[0]:dates[1],'E'] = 1
 
 df1
 ```
 
 ```python
->                 *A         B         C     D   F    E
+>                 A         B         C     D   F    E
   2013-01-01  0.000000  0.000000 -0.015071  5  NaN  1.0
   2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0
   2013-01-03 -1.682384 -0.026006 -0.152957  5  2.0  NaN
-  2013-01-04 -0.108757 -0.958267  0.407331  5  3.0  NaN*
+  2013-01-04 -0.108757 -0.958267  0.407331  5  3.0  NaN
 ```
 
 <br/>
@@ -798,13 +798,13 @@ df1
 - `how='any'`는 값들 중 하나라도 NaN인 경우 삭제를 뜻하며, `how='all'`은 전체가 NaN인 경우 삭제가 된다.
 
 ```python
-df1.dropna(how**=**'any')
+df1.dropna(how='any')
 ```
 
 ```python
 
->                 *A         B         C     D    F    E
-  2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0*
+>                 A         B         C     D    F    E
+  2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0
 ```
 
 <br/>
@@ -812,15 +812,15 @@ df1.dropna(how**=**'any')
 - `DataFrame`의 `fillna()`를 통해 결측데이터에 값을 넣을 수도 있다.
 
 ```python
-df1.fillna(value**=**5)
+df1.fillna(value=5)
 ```
 
 ```python
->                 *A         B         C     D    F    E
+>                 A         B         C     D    F    E
   2013-01-01  0.000000  0.000000 -0.015071  5  5.0  1.0
   2013-01-02 -1.037697 -0.891196  0.495447  5  1.0  1.0
   2013-01-03 -1.682384 -0.026006 -0.152957  5  2.0  5.0
-  2013-01-04 -0.108757 -0.958267  0.407331  5  3.0  5.0*
+  2013-01-04 -0.108757 -0.958267  0.407331  5  3.0  5.0
 ```
 
 <br/>
@@ -832,11 +832,11 @@ pd.isnull(df1)
 ```
 
 ```python
->                *A      B      C      D      F      E
+>                A      B      C      D      F      E
   2013-01-01  False  False  False  False   True  False
   2013-01-02  False  False  False  False  False  False
   2013-01-03  False  False  False  False  False   True
-  2013-01-04  False  False  False  False  False   True*
+  2013-01-04  False  False  False  False  False   True
 ```
 
 <br/><br/>
@@ -858,12 +858,12 @@ df.mean()
 ```
 
 ```python
-> *A   -0.016325
+> A   -0.016325
   B    0.060864
   C   -0.072482
   D    5.000000
   F    3.000000
-  dtype: float64*
+  dtype: float64
 ```
 
 <br/>
@@ -871,19 +871,19 @@ df.mean()
 - 같은 `mean()`을 다른 축(axis)에 대한 평균을 구할 수 있다. 여기서 축이란 0은 컬럼 기준, 1은 인덱스 기준을 말한다.
 
 ```python
-*# axis = 1로 평균 구하기*
+# axis = 1로 평균 구하기
 
 df.mean(1)
 ```
 
 ```python
-> *2013-01-01    1.246232
+> 2013-01-01    1.246232
   2013-01-02    0.913311
   2013-01-03    1.027731
   2013-01-04    1.468061
   2013-01-05    2.561689
   2013-01-06    1.998690
-  Freq: D, dtype: float64*
+  Freq: D, dtype: float64
 ```
 
 <br/>
@@ -891,12 +891,12 @@ df.mean(1)
 - 만약 다른 차원의 오브젝트들 간 연산이 필요한 경우 축만 맞춰진다면 자동으로 연산을 수행한다.
 
 ```python
-*# 데이터 시프트 연산 (2개씩 밀립니다.)*
-s **=** pd.Series([1,3,5,np.nan,6,8], index**=**dates).shift(2)
+# 데이터 시프트 연산 (2개씩 밀립니다.)
+s = pd.Series([1,3,5,np.nan,6,8], index=dates).shift(2)
 ```
 
 ```python
-> *2013-01-01    NaN
+> 2013-01-01    NaN
   2013-01-02    NaN
   2013-01-03    1.0
   2013-01-04    3.0
@@ -906,18 +906,18 @@ s **=** pd.Series([1,3,5,np.nan,6,8], index**=**dates).shift(2)
 ```
 
 ```python
-# DataFrame와 Series를 index 축 기준으로 빼기 연산*
-df.sub(s, axis**=**'index')
+# DataFrame와 Series를 index 축 기준으로 빼기 연산
+df.sub(s, axis='index')
 ```
 
 ```python
->                    *A         B         C    D    F
+>                    A         B         C    D    F
   2013-01-01       NaN       NaN       NaN  NaN  NaN
   2013-01-02       NaN       NaN       NaN  NaN  NaN
   2013-01-03 -2.682384 -1.026006 -1.152957  4.0  1.0
   2013-01-04 -3.108757 -3.958267 -2.592669  2.0  0.0
   2013-01-05 -3.907620 -2.158223 -5.125714  0.0 -1.0
-  2013-01-06       NaN       NaN       NaN  NaN  NaN*
+  2013-01-06       NaN       NaN       NaN  NaN  NaN
 ```
 
 <br/>
@@ -927,33 +927,33 @@ df.sub(s, axis**=**'index')
   - 데이터에 대해 정의된 함수들이나 lamdba 식을 이용하여 새로운 함수도 적용할 수 있다.
 
 ```python
-*# 각 컬럼별(기본 axis = 0은 컬럼 기준) 누적합을 구합니다.*
+# 각 컬럼별(기본 axis = 0은 컬럼 기준) 누적합을 구합니다.
 
 df.apply(np.cumsum)
 ```
 
 ```python
->                    *A         B         C   D     F
+>                    A         B         C   D     F
   2013-01-01  0.000000  0.000000 -0.015071   5   NaN
   2013-01-02 -1.037697 -0.891196  0.480376  10   1.0
   2013-01-03 -2.720081 -0.917202  0.327419  15   3.0
   2013-01-04 -2.828838 -1.875469  0.734750  20   6.0
   2013-01-05 -1.736458  0.966308  0.609036  25  10.0
   2013-01-06 -0.097949  0.365182 -0.434895  30  15.0
-  lambda 식을 이용하여 max-min의 값을 구합니다.*
+  lambda 식을 이용하여 max-min의 값을 구합니다.
 ```
 
 ```python
-df.apply(**lambda** x: x.max() **-** x.min())
+df.apply(lambda x: x.max() - x.min())
 ```
 
 ```python
-> *A    3.320893
+> A    3.320893
   B    3.800044
   C    1.539378
   D    0.000000
   F    4.000000
-  dtype: float64*
+  dtype: float64
 ```
 
 <br/>
@@ -965,11 +965,11 @@ df.apply(**lambda** x: x.max() **-** x.min())
 - `Series` 데이터의 각 값이 어떤 분포를 이루는지 히스토그램 형식으로 볼 수 있다.
 
 ```python
-s **=** pd.Series(np.random.randint(0, 7, size**=**10))
+s = pd.Series(np.random.randint(0, 7, size=10))
 ```
 
 ```python
-> *0    2
+> 0    2
   1    0
   2    5
   3    3
@@ -979,7 +979,7 @@ s **=** pd.Series(np.random.randint(0, 7, size**=**10))
   7    2
   8    3
   9    5
-  dtype: int64*
+  dtype: int64
 ```
 
 ```python
@@ -987,11 +987,11 @@ s.value_counts()
 ```
 
 ```python
-> *5    4
+> 5    4
   2    3
   3    2
   0    1
-  dtype: int64*
+  dtype: int64
 ```
 
 <br/>
@@ -1005,13 +1005,13 @@ s.value_counts()
 - `str.lower()`를 통해 문자를 소문자로 변경할 수 있다.
 
 ```python
-s **=** pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat'])
+s = pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat'])
 
 s.str.lower()
 ```
 
 ```python
-*# 0       a
+# 0       a
 # 1       b
 # 2       c
 # 3    aaba
@@ -1020,7 +1020,7 @@ s.str.lower()
 # 6    caba
 # 7     dog
 # 8     cat
-# dtype: object*
+# dtype: object
 ```
 
 <br/><br/>
@@ -1040,11 +1040,11 @@ s.str.lower()
 - `concat()`을 이용하여 이어붙이는 연산(Concatenating)을 할 수 있다.
 
 ```python
-df **=** pd.DataFrame(np.random.randn(10, 4))
+df = pd.DataFrame(np.random.randn(10, 4))
 ```
 
 ```python
->        *0         1         2         3
+>        0         1         2         3
   0 -0.234987 -0.373520 -2.331217 -0.011025
   1 -0.594832 -0.056876  0.511321 -0.637962
   2  0.829543 -0.136714  0.817715 -0.418866
@@ -1058,15 +1058,15 @@ df **=** pd.DataFrame(np.random.randn(10, 4))
 ```
 
 ```python
-# 위에서 생성한 DataFrame을 여러개로 분리합니다.*
-pieces **=** [df[:3], df[3:7], df[7:]]
+# 위에서 생성한 DataFrame을 여러개로 분리합니다.
+pieces = [df[:3], df[3:7], df[7:]]
 
-*# concat()을 이용하여 다시 이어붙일 수 있습니다.*
+# concat()을 이용하여 다시 이어붙일 수 있습니다.
 pd.concat(pieces)
 ```
 
 ```python
->           *0         1         2         3
+>           0         1         2         3
   0 -0.234987 -0.373520 -2.331217 -0.011025
   1 -0.594832 -0.056876  0.511321 -0.637962
   2  0.829543 -0.136714  0.817715 -0.418866
@@ -1076,7 +1076,7 @@ pd.concat(pieces)
   6 -1.583362  0.117909  0.332279  0.362941
   7  0.479388 -0.369535 -0.939108  1.142691
   8  0.765936  0.750054  0.634936 -1.405519
-  9 -1.262849  0.883082 -0.200222 -0.132803*
+  9 -1.262849  0.883082 -0.200222 -0.132803
 ```
 
 <br/>
@@ -1088,36 +1088,36 @@ pd.concat(pieces)
 - SQL에서 자주 사용하는 `join` 연산도 제공된다.
 
 ```python
-left **=** pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
+left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
 ```
 
 ```python
->    *key  lval
+>    key  lval
   0  foo     1
-  1  foo     2*
+  1  foo     2
 ```
 
 ```python
-right **=** pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
+right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
 ```
 
 ```python
->    *key  rval
+>    key  rval
   0  foo     4
   1  foo     5
 ```
 
 ```python
-# 위에서 생성한 left, right를 'key' 컬럼값 기준으로 조인합니다.*
-pd.merge(left, right, on**=**'key')
+# 위에서 생성한 left, right를 'key' 컬럼값 기준으로 조인합니다.
+pd.merge(left, right, on='key')
 ```
 
 ```python
->    *key  lval  rval
+>    key  lval  rval
   0  foo     1     4
   1  foo     1     5
   2  foo     2     4
-  3  foo     2     5*
+  3  foo     2     5
 ```
 
 <br/>
@@ -1125,33 +1125,33 @@ pd.merge(left, right, on**=**'key')
 - key가 다른 경우는 아래와 같다.
 
 ```python
-left **=** pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1, 2]})
+left = pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1, 2]})
 ```
 
 ```python
->   *key	 lval
+>   key	 lval
   0	foo	    1
-  1	bar	    2*
+  1	bar	    2
 ```
 
 ```python
-right **=** pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4, 5]})
+right = pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4, 5]})
 ```
 
 ```python
->   *key	 rval
+>   key	 rval
   0	foo	    4
-  1	bar	    5*
+  1	bar	    5
 ```
 
 ```python
-pd.merge(left, right, on**=**'key')
+pd.merge(left, right, on='key')
 ```
 
 ```python
->   *key	 lval	 rval
+>   key	 lval	 rval
   0	foo	    1	    4
-  1	bar	    2	    5*
+  1	bar	    2	    5
 ```
 
 
@@ -1170,14 +1170,14 @@ pd.merge(left, right, on**=**'key')
 - 먼저 `DataFrame`을 하나 생성한다.
 
 ```python
-df **=** pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'foo'],
+df = pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'foo'],
                                     'B' : ['one', 'one', 'two', 'three','two', 'two', 'one', 'three'],
                                     'C' : np.random.randn(8),
                                     'D' : np.random.randn(8)})
 ```
 
 ```python
->      *A      B      C         D
+>      A      B      C         D
   0  foo    one -0.740768  2.281787
   1  bar    one -0.501289  1.099814
   2  foo    two -0.156649 -0.476144
@@ -1185,7 +1185,7 @@ df **=** pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', '
   4  foo    two  0.072001 -1.212766
   5  bar    two -1.794411 -0.726346
   6  foo    one  1.950104 -0.884756
-  7  foo  three  0.537576  0.536286*
+  7  foo  three  0.537576  0.536286
 ```
 
 <br/>
@@ -1193,31 +1193,31 @@ df **=** pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', '
 - 특정 컬럼 기준으로 먼저 그룹화를 진행한 후 sum()을 적용합니다.
 
 ```python
-*# A 컬럼이 같은 것끼리 묶고, sum()*
+# A 컬럼이 같은 것끼리 묶고, sum()
 df.groupby('A').sum()
 ```
 
 ```python
->          *C         D
+>          C         D
   A                      
   bar -2.218387  0.822278
   foo  1.662263  0.244406
 ```
 
 ```python
-# 'A기준으로 묶고'. 'B' 기준으로 다시 묶은 후 sum()*
+# 'A기준으로 묶고'. 'B' 기준으로 다시 묶은 후 sum()
 df.groupby(['A','B']).sum()
 ```
 
 ```python
->                *C         D
+>                C         D
   A   B                        
   bar one   -0.501289  1.099814
       three  0.077314  0.448811
       two   -1.794411 -0.726346
   foo one    1.209336  1.397031
       three  0.537576  0.536286
-      two   -0.084648 -1.688910*
+      two   -0.084648 -1.688910
 ```
 
 <br/><br/>
@@ -1233,26 +1233,26 @@ df.groupby(['A','B']).sum()
 - 먼저 새로운 `DataFrame`을 하나 생성한다.
 
 ```python
-tuples **=** list(zip(*****[['bar', 'bar', 'baz', 'baz', 'foo', 'foo', 'qux', 'qux'],
+tuples = list(zip([['bar', 'bar', 'baz', 'baz', 'foo', 'foo', 'qux', 'qux'],
                     ['one', 'two', 'one', 'two', 'one', 'two', 'one', 'two']]))
 
-*# 각 리스트에서 첫번째를 'first'로 두번째를 'second'로 멀티인덱스를 만듭니다.*
-index **=** pd.MultiIndex.from_tuples(tuples, names**=**['first', 'second'])
+# 각 리스트에서 첫번째를 'first'로 두번째를 'second'로 멀티인덱스를 만듭니다.
+index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
 
-*# 두 개의 컬럼을 생성하고 랜덤값을 부여합니다.*
-df **=** pd.DataFrame(np.random.randn(8, 2), index**=**index, columns**=**['A', 'B'])
+# 두 개의 컬럼을 생성하고 랜덤값을 부여합니다.
+df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=['A', 'B'])
 
-df2 **=** df[:4]
+df2 = df[:4]
 ```
 
 ```python
 
->                   *A         B
+>                   A         B
   first second                    
   bar   one     0.438217 -0.418822
         two     1.034927 -0.464648
   baz   one     0.463575 -0.141918
-        two     0.490648  0.247615*
+        two     0.490648  0.247615
 ```
 
 <br/>
@@ -1260,11 +1260,11 @@ df2 **=** df[:4]
 - `DataFrame`의 `stack()`은 모든 데이터들을 인덱스 레벨로 변형한다. 이를 압축(compresses)한다고 표현한다.
 
 ```python
-stacked **=** df2.stack()
+stacked = df2.stack()
 ```
 
 ```python
-> *first  second   
+> first  second   
   bar    one     A    0.438217
                  B   -0.418822
          two     A    1.034927
@@ -1273,7 +1273,7 @@ stacked **=** df2.stack()
                  B   -0.141918
          two     A    0.490648
                  B    0.247615
-  dtype: float64*
+  dtype: float64
 ```
 
 <br/>
@@ -1281,12 +1281,12 @@ stacked **=** df2.stack()
 - `unstack()` 을 통해 “stacked”된 `DataFrame` 이나 `Series` 를 원래 형태로 되돌릴 수 있다. 되돌리는(압축 해제) 것의 레벨을 정할 수 있다.
 
 ```python
-*# 원래 상태로 되돌립니다. (레벨 -1)*
+# 원래 상태로 되돌립니다. (레벨 -1)
 stacked.unstack()
 ```
 
 ```python
->                      *A         B
+>                      A         B
   first second                    
   bar   one     0.438217 -0.418822
         two     1.034927 -0.464648
@@ -1295,12 +1295,12 @@ stacked.unstack()
 ```
 
 ```python
-# 레벨1은 second 인덱스가 해제되어 one과 two 컬럼이 생깁니다.*
+# 레벨1은 second 인덱스가 해제되어 one과 two 컬럼이 생깁니다.
 stacked.unstack(1)
 ```
 
 ```python
-> *second        one       two
+> second        one       two
   first                      
   bar   A  0.438217  1.034927
         B -0.418822 -0.464648
@@ -1309,17 +1309,17 @@ stacked.unstack(1)
 ```
 
 ```python
-# 레벨0은 first 인덱스가 해제되어 bar와 baz 컬럼이 생깁니다.*
+# 레벨0은 first 인덱스가 해제되어 bar와 baz 컬럼이 생깁니다.
 stacked.unstack(0)
 ```
 
 ```python
-> *first          bar       baz
+> first          bar       baz
   second                      
   one    A  0.438217  0.463575
          B -0.418822 -0.141918
   two    A  1.034927  0.490648
-         B -0.464648  0.247615*
+         B -0.464648  0.247615
 ```
 
 <br/><br/>
@@ -1331,15 +1331,15 @@ stacked.unstack(0)
 - 우선 `DataFrame`을 하나 생성한다.
 
 ```python
-df **=** pd.DataFrame({'A' : ['one', 'one', 'two', 'three'] ***** 3,
-                   'B' : ['A', 'B', 'C'] ***** 4,
-                   'C' : ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] ***** 2,
+df = pd.DataFrame({'A' : ['one', 'one', 'two', 'three']  3,
+                   'B' : ['A', 'B', 'C']  4,
+                   'C' : ['foo', 'foo', 'foo', 'bar', 'bar', 'bar']  2,
                    'D' : np.random.randn(12),
                    'E' : np.random.randn(12)})
 ```
 
 ```python
->         *A  B    C         D         E
+>         A  B    C         D         E
   0     one  A  foo -0.268332 -1.378239
   1     one  B  foo -1.168934  0.263587
   2     two  C  foo  1.245084  0.882631
@@ -1351,7 +1351,7 @@ df **=** pd.DataFrame({'A' : ['one', 'one', 'two', 'three'] ***** 3,
   8     one  C  foo  0.166766  0.308271
   9     one  A  bar  0.516837  0.869884
   10    two  B  bar -0.667602  0.584587
-  11  three  C  bar -0.848954  0.609278*
+  11  three  C  bar -0.848954  0.609278
 ```
 
 <br/>
@@ -1359,11 +1359,11 @@ df **=** pd.DataFrame({'A' : ['one', 'one', 'two', 'three'] ***** 3,
 - `pd.pivot_table()`을 통해 새로운 피벗으로 테이블을 만들 수 있다.
 
 ```python
-pd.pivot_table(df, values**=**'D', index**=**['A', 'B'], columns**=**['C'])
+pd.pivot_table(df, values='D', index=['A', 'B'], columns=['C'])
 ```
 
 ```python
-> *C             bar       foo
+> C             bar       foo
   A     B                    
   one   A  0.516837 -0.268332
         B  0.005996 -1.168934
@@ -1373,7 +1373,7 @@ pd.pivot_table(df, values**=**'D', index**=**['A', 'B'], columns**=**['C'])
         C -0.848954       NaN
   two   A       NaN  1.172619
         B -0.667602       NaN
-        C       NaN  1.245084*
+        C       NaN  1.245084
 ```
 
 <br/><br/>
@@ -1389,19 +1389,19 @@ pd.pivot_table(df, values**=**'D', index**=**['A', 'B'], columns**=**['C'])
 - `resample()`을 이용하여 데이터 샘플링을 할 수 있다.
 
 ```python
-*# 1초 단위로 100개의 index 생성*
-rng **=** pd.date_range('1/1/2012', periods**=**100, freq**=**'S')
+# 1초 단위로 100개의 index 생성
+rng = pd.date_range('1/1/2012', periods=100, freq='S')
 
-*# 0~500 사이 랜덤값 입력*
-ts **=** pd.Series(np.random.randint(0, 500, len(rng)), index**=**rng)
+# 0~500 사이 랜덤값 입력
+ts = pd.Series(np.random.randint(0, 500, len(rng)), index=rng)
 
-*# 5분 단위로 샘플링하여 sum()*
+# 5분 단위로 샘플링하여 sum()
 ts.resample('5Min').sum()
 ```
 
 ```python
-> *2012-01-01    23289
-  Freq: 5T, dtype: int32*
+> 2012-01-01    23289
+  Freq: 5T, dtype: int32
 ```
 
 <br/>
@@ -1409,12 +1409,12 @@ ts.resample('5Min').sum()
 - 다양한 타임존으로 변경할 수도 있다.
 
 ```python
-rng **=** pd.date_range('3/6/2012 00:00', periods**=**5, freq**=**'D')
-ts **=** pd.Series(np.random.randn(len(rng)), rng)
+rng = pd.date_range('3/6/2012 00:00', periods=5, freq='D')
+ts = pd.Series(np.random.randn(len(rng)), rng)
 ```
 
 ```python
-> *2012-03-06   -0.104793
+> 2012-03-06   -0.104793
   2012-03-07    1.151961
   2012-03-08    0.504693
   2012-03-09   -0.758065
@@ -1423,31 +1423,31 @@ ts **=** pd.Series(np.random.randn(len(rng)), rng)
 ```
 
 ```python
-# 표준시(UTC)로 변경*
-ts_utc **=** ts.tz_localize('UTC')
+# 표준시(UTC)로 변경
+ts_utc = ts.tz_localize('UTC')
 ```
 
 ```python
-> *2012-03-06 00:00:00+00:00   -0.104793
+> 2012-03-06 00:00:00+00:00   -0.104793
   2012-03-07 00:00:00+00:00    1.151961
   2012-03-08 00:00:00+00:00    0.504693
   2012-03-09 00:00:00+00:00   -0.758065
   2012-03-10 00:00:00+00:00   -0.400617
-  Freq: D, dtype: float64*
+  Freq: D, dtype: float64
 ```
 
 ```python
-*# US 동부 시각으로 변경*
+# US 동부 시각으로 변경
 ts_utc.tz_convert('US/Eastern')
 ```
 
 ```python
-> *2012-03-05 19:00:00-05:00   -0.104793
+> 2012-03-05 19:00:00-05:00   -0.104793
   2012-03-06 19:00:00-05:00    1.151961
   2012-03-07 19:00:00-05:00    0.504693
   2012-03-08 19:00:00-05:00   -0.758065
   2012-03-09 19:00:00-05:00   -0.400617
-  Freq: D, dtype: float64*
+  Freq: D, dtype: float64
 ```
 
 <br/>
@@ -1455,32 +1455,32 @@ ts_utc.tz_convert('US/Eastern')
 - 시간 간격(TimeSpan)도 쉽게 표현할 수 있습니다.
 
 ```python
-*# 매달('M') 기준으로 생성*
-rng **=** pd.date_range('1/1/2012', periods**=**5, freq**=**'M')
+# 매달('M') 기준으로 생성
+rng = pd.date_range('1/1/2012', periods=5, freq='M')
 
-ts **=** pd.Series(np.random.randn(len(rng)), index**=**rng)
+ts = pd.Series(np.random.randn(len(rng)), index=rng)
 ```
 
 ```python
-> *2012-01-31   -0.087643
+> 2012-01-31   -0.087643
   2012-02-29    1.782097
   2012-03-31   -0.485397
   2012-04-30    2.536808
   2012-05-31    3.062771
-  Freq: M, dtype: float64*
+  Freq: M, dtype: float64
 ```
 
 ```python
-ps **=** ts.to_period()
+ps = ts.to_period()
 ```
 
 ```python
-> *2012-01   -0.087643
+> 2012-01   -0.087643
   2012-02    1.782097
   2012-03   -0.485397
   2012-04    2.536808
   2012-05    3.062771
-  Freq: M, dtype: float64*
+  Freq: M, dtype: float64
 ```
 
 ```python
@@ -1488,12 +1488,12 @@ ps.to_timestamp()
 ```
 
 ```python
-> *2012-01-01   -0.087643
+> 2012-01-01   -0.087643
   2012-02-01    1.782097
   2012-03-01   -0.485397
   2012-04-01    2.536808
   2012-05-01    3.062771
-  Freq: MS, dtype: float64*
+  Freq: MS, dtype: float64
 ```
 
 <br/>
@@ -1501,21 +1501,21 @@ ps.to_timestamp()
 - 기간(period)과 시간(timestamp) 사이에 산술적인 기능들을 적용할 수 있다. 아래 예제에서는 분기별로 9시간을 더한 시각을 기준으로 볼 수 있다.
 
 ```python
-*# 분기 단위로 시간 인덱스를 생성합니다.*
-prng **=** pd.period_range('1990Q1', '2000Q4', freq**=**'Q-NOV')
-ts **=** pd.Series(np.random.randn(len(prng)), prng)
-ts.index **=** (prng.asfreq('M', 'e') **+** 1).asfreq('H', 's') **+** 9
+# 분기 단위로 시간 인덱스를 생성합니다.
+prng = pd.period_range('1990Q1', '2000Q4', freq='Q-NOV')
+ts = pd.Series(np.random.randn(len(prng)), prng)
+ts.index = (prng.asfreq('M', 'e') + 1).asfreq('H', 's') + 9
 
 ts.head()
 ```
 
 ```python
-> *1990-03-01 09:00    1.318669
+> 1990-03-01 09:00    1.318669
   1990-06-01 09:00   -0.094259
   1990-09-01 09:00    0.076941
   1990-12-01 09:00   -0.216037
   1991-03-01 09:00    0.203854
-  Freq: H, dtype: float64*
+  Freq: H, dtype: float64
 ```
 
 <br/><br/>
@@ -1529,23 +1529,23 @@ ts.head()
 - `.astype("category")`로 범주형 데이터 타입으로 변환할 수 있다.
 
 ```python
-df **=** pd.DataFrame({"id":[1,2,3,4,5,6], "raw_grade":['a', 'b', 'b', 'a', 'a', 'e']})
+df = pd.DataFrame({"id":[1,2,3,4,5,6], "raw_grade":['a', 'b', 'b', 'a', 'a', 'e']})
 
-*# category형 데이터 타입으로 변환한다.*
-df["grade"] **=** df["raw_grade"].astype("category")
+# category형 데이터 타입으로 변환한다.
+df["grade"] = df["raw_grade"].astype("category")
 
 df["grade"]
 ```
 
 ```python
-> *0    a
+> 0    a
   1    b
   2    b
   3    a
   4    a
   5    e
   Name: grade, dtype: category
-  Categories (3, object): [a, b, e]*
+  Categories (3, object): [a, b, e]
 ```
 
 <br/>
@@ -1553,7 +1553,7 @@ df["grade"]
 - `cat.categories` 속성을 이용하여 카테고리명을 다시 만들 수 있다.
 
 ```python
-df["grade"].cat.categories **=** ["very good", "good", "very bad"]
+df["grade"].cat.categories = ["very good", "good", "very bad"]
 ```
 
 <br/>
@@ -1561,18 +1561,18 @@ df["grade"].cat.categories **=** ["very good", "good", "very bad"]
 - `cat.set_categories()`를 이용하여 카테고리를 재정의할 수 있다. 재정의는 현재 갖고 있지 않은 범주도 추가할 수 있다.
 
 ```python
-df["grade"] **=** df["grade"].cat.set_categories(["very bad", "bad", "medium", "good", "very good"])
+df["grade"] = df["grade"].cat.set_categories(["very bad", "bad", "medium", "good", "very good"])
 ```
 
 ```python
-> *0    very good
+> 0    very good
   1         good
   2         good
   3    very good
   4    very good
   5     very bad
   Name: grade, dtype: category
-  Categories (5, object): [very bad, bad, medium, good, very good]*
+  Categories (5, object): [very bad, bad, medium, good, very good]
 ```
 
 <br/>
@@ -1580,17 +1580,17 @@ df["grade"] **=** df["grade"].cat.set_categories(["very bad", "bad", "medium", "
 - 범주형 데이터를 정렬할 수도 있다. 정렬 기준은 문자 기준이 아닌 범주형 자료를 정의할 때 만든 순서로 정렬된다.
 
 ```python
-df.sort_values(by**=**"grade")
+df.sort_values(by="grade")
 ```
 
 ```python
->    *id raw_grade      grade
+>    id raw_grade      grade
   5   6         e   very bad
   1   2         b       good
   2   3         b       good
   0   1         a  very good
   3   4         a  very good
-  4   5         a  very good*
+  4   5         a  very good
 ```
 
 <br/>
@@ -1602,13 +1602,13 @@ df.groupby("grade").size()
 ```
 
 ```python
-> *grade
+> grade
   very bad     1
   bad          0
   medium       0
   good         2
   very good    3
-  dtype: int64*
+  dtype: int64
 ```
 
 <br/><br/>
@@ -1638,7 +1638,7 @@ pd.read_csv('foo.csv')
 ```
 
 ```python
->      *Unnamed: 0          A          B         C          D
+>      Unnamed: 0          A          B         C          D
   0    2000-01-01   0.361164   0.270283 -0.567327  -1.045564
   1    2000-01-02  -0.119395   0.735437  0.147388  -2.754982
   2    2000-01-03  -1.377198   1.322276 -0.017347  -2.766424
@@ -1650,7 +1650,7 @@ pd.read_csv('foo.csv')
   997  2002-09-24 -15.924737  17.051347 -7.630588 -43.195306
   998  2002-09-25 -15.504673  16.281666 -7.241048 -43.058862
   999  2002-09-26 -15.336585  16.601851 -9.285505 -44.013105
-  [1000 rows x 5 columns]*
+  [1000 rows x 5 columns]
 ```
 <br/>
 
@@ -1673,7 +1673,7 @@ pd.read_hdf('foo.h5','df')
 ```
 
 ```python
->                  *A          B         C          D
+>                  A          B         C          D
   2000-01-01   0.361164   0.270283 -0.567327  -1.045564
   2000-01-02  -0.119395   0.735437  0.147388  -2.754982
   2000-01-03  -1.377198   1.322276 -0.017347  -2.766424
@@ -1685,7 +1685,7 @@ pd.read_hdf('foo.h5','df')
   2002-09-24 -15.924737  17.051347 -7.630588 -43.195306
   2002-09-25 -15.504673  16.281666 -7.241048 -43.058862
   2002-09-26 -15.336585  16.601851 -9.285505 -44.013105
-  [1000 rows x 4 columns]*
+  [1000 rows x 4 columns]
 ```
 
 <br/>
@@ -1697,7 +1697,7 @@ pd.read_hdf('foo.h5','df')
 - `to_excel()`로 xlsx 파일 형식으로 쓸 수 있다.
 
 ```python
-df.to_excel('foo.xlsx', sheet_name**=**'Sheet1')
+df.to_excel('foo.xlsx', sheet_name='Sheet1')
 ```
 
 <br/>
@@ -1705,11 +1705,11 @@ df.to_excel('foo.xlsx', sheet_name**=**'Sheet1')
 - `pd.read_excel()`로 xlsx 파일로부터 `DataFrame`으로 읽어올 수 있다.
 
 ```python
-pd.read_excel('foo.xlsx', 'Sheet1', index_col**=**None, na_values**=**['NA'])
+pd.read_excel('foo.xlsx', 'Sheet1', index_col=None, na_values=['NA'])
 ```
 
 ```python
->     *Unnamed: 0          A          B         C          D
+>     Unnamed: 0          A          B         C          D
   0   2000-01-01   0.361164   0.270283 -0.567327  -1.045564
   1   2000-01-02  -0.119395   0.735437  0.147388  -2.754982
   2   2000-01-03  -1.377198   1.322276 -0.017347  -2.766424
@@ -1721,5 +1721,5 @@ pd.read_excel('foo.xlsx', 'Sheet1', index_col**=**None, na_values**=**['NA'])
   997 2002-09-24 -15.924737  17.051347 -7.630588 -43.195306
   998 2002-09-25 -15.504673  16.281666 -7.241048 -43.058862
   999 2002-09-26 -15.336585  16.601851 -9.285505 -44.013105
-  [1000 rows x 5 columns]*
+  [1000 rows x 5 columns]
 ```
