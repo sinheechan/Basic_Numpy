@@ -86,7 +86,7 @@ df= pd.DataFrame(np.random.randn(6,4), index=dates, columns=list('ABCD'))
 ```
 <br/>
 
-![Untitled](Untitled%201.png)
+![Pandas Basic](image/Pandas_Basic_1.png)
 
 <br/>
 
@@ -141,7 +141,7 @@ df.tail(3)
 
 <br/>
 
-![Untitled](Untitled%202.png)
+![Pandas Basic](image/Pandas_Basic_2.png)
 
 <br/>
 
@@ -167,7 +167,7 @@ df.values
 
 <br/>
 
-![Untitled](Untitled%203.png)
+![Pandas Basic](image/Pandas_Basic_3.png)
 
 <br/>
 
@@ -291,7 +291,7 @@ df['A']
 
 <br/>
 
-![Untitled](Untitled%204.png)
+![Pandas Basic](image/Pandas_Basic_4.png)
 
 <br/>
 
@@ -318,7 +318,7 @@ df['20130102':'20130104']
 
 <br/>
 
-![Untitled](Untitled%205.png)
+![Pandas Basic](image/Pandas_Basic_5.png)
 
 <br/>
 
@@ -343,7 +343,7 @@ df.loc[dates[0]]
 
 <br/>
 
-![Untitled](Untitled%206.png)
+![Pandas Basic](image/Pandas_Basic_6.png)
 
 <br/>
 
@@ -375,7 +375,7 @@ df.loc['20130102':'20130104',['A','B']]
 
 <br/>
 
-![Untitled](Untitled%207.png)
+![Pandas Basic](image/Pandas_Basic_7.png)
 
 <br/>
 
@@ -401,7 +401,7 @@ df.loc[dates[0],'A']
 
 <br/>
 
-![Untitled](Untitled%208.png)
+![Pandas Basic](image/Pandas_Basic_8.png)
 
 <br/>
 
@@ -422,7 +422,7 @@ df.iloc[3]
 
 <br/>
 
-![Untitled](Untitled%209.png)
+![Pandas Basic](image/Pandas_Basic_9.png)
 
 <br/>
 
@@ -447,7 +447,7 @@ df.iloc[[1,2,4],[0,2]]
 
 <br/>
 
-![Untitled](Untitled%2010.png)
+![Pandas Basic](image/Pandas_Basic_10.png)
 
 <br/>
 
@@ -475,7 +475,7 @@ df.iloc[:,1:3]
 
 <br/>
 
-![Untitled](Untitled%2011.png)
+![Pandas Basic](image/Pandas_Basic_11.png)
 
 <br/>
 
@@ -491,7 +491,7 @@ df.iat[1,1]
 
 <br/>
 
-![Untitled](Untitled%2012.png)
+![Pandas Basic](image/Pandas_Basic_12.png)
 
 <br/>
 
@@ -510,7 +510,7 @@ df[df['A']> 0]
 
 <br/>
 
-![Untitled](Untitled%2013.png)
+![Pandas Basic](image/Pandas_Basic_13.png)
 
 <br/>
 
@@ -530,7 +530,7 @@ df[df> 0]
 
 <br/>
 
-![Untitled](Untitled%2014.png)
+![Pandas Basic](image/Pandas_Basic_14.png)
 
 <br/>
 
@@ -562,7 +562,7 @@ df2[df2['E'].isin(['two','four'])]
 
 <br/>
 
-![Untitled](Untitled%2015.png)
+![Pandas Basic](image/Pandas_Basic_15.png)
 
 <br/><br/>
 
@@ -590,7 +590,7 @@ df['F']= s1
 
 <br/>
 
-![Untitled](Untitled%2016.png)
+![Pandas Basic](image/Pandas_Basic_16.png)
 
 <br/>
 
@@ -618,7 +618,7 @@ df
 
 <br/>
 
-![Untitled](Untitled%2017.png)
+![Pandas Basic](image/Pandas_Basic_17.png)
 
 <br/>
 
@@ -643,7 +643,7 @@ df2
 
 <br/>
 
-![Untitled](Untitled%2018.png)
+![Pandas Basic](image/Pandas_Basic_18.png)
 
 <br/><br/>
 
