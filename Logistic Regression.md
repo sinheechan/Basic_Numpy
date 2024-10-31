@@ -38,7 +38,7 @@
 
 <br/>
 
-[image 0]
+![Logistic Regression](image/Logistic%20Regression_0.png)
 
 <br/>
 
@@ -61,7 +61,7 @@
 
 <br/>
 
-[image 1]
+![Logistic Regression](image/Logistic%20Regression_1.png)
 
 <br/>
 
@@ -99,4 +99,4 @@
 
 <br/>
 
-[image 2]
+![Logistic Regression](image/Logistic%20Regression_2.png)
