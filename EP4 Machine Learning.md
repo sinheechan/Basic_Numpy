@@ -82,7 +82,7 @@
 
 <br/><br/>
 
-## 1.1.1 분류(classification)
+## ① 분류(classification)
 
 <br/>
 
@@ -104,7 +104,7 @@
 
 <br/><br/>
 
-## 1.1.2 회귀(regression)
+## ② 회귀(regression)
 
 <br/>
 
@@ -144,7 +144,7 @@
 
 <br/><br/>
 
-## 1.2.1 군집
+## ① 군집
 
 <br/>
 
@@ -160,7 +160,7 @@
 
 <br/><br/>
 
-## 1.2.2 시각화와 차원축소
+## ② 시각화와 차원축소
 
 <br/>
 
@@ -188,7 +188,7 @@
 
 <br/><br/>
 
-## 1.2.3 이상치 탐지(Outlier detection)와 특이치 탐지(Novelty detection)
+## ③ 이상치 탐지(Outlier detection)와 특이치 탐지(Novelty detection)
 
 <br/>
 
@@ -209,7 +209,7 @@
 
 <br/><br/>
 
-## 1.2.4 연관 규칙 학습
+## ④ 연관 규칙 학습
 
 <br/>
 
