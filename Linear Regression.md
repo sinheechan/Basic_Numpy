@@ -18,7 +18,7 @@
 
 <br/>
 
-[image0]
+![Linear Regression](image/Linear Regression_0.png)
 
 <br/>
 
@@ -44,7 +44,7 @@
 
 <br/>
 
-[image1]
+![Linear Regression](image/Linear Regression_1.png)
 
 <br/>
 
@@ -82,7 +82,7 @@
 
 <br/>
 
-[image2]
+![Linear Regression](image/Linear Regression_2.png)
 
 <br/>
 
@@ -130,7 +130,7 @@
 
 <br/>
 
-[image3]
+![Linear Regression](image/Linear Regression_3.png)
 
 <br/>
 
