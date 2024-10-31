@@ -24,7 +24,7 @@
 
 <br/>
 
-[image 0]
+![Decision Tree](image/Decision%20Tree_0.png)
 
 <br/>
 
@@ -78,7 +78,7 @@
 
 <br/>
 
-[image 1]
+![Decision Tree](image/Decision%20Tree_1.png)
 
 <br/>
 
@@ -90,7 +90,7 @@
 
 <br/>
 
-[image 2]
+![Decision Tree](image/Decision%20Tree_2.png)
 
 <br/>
 
