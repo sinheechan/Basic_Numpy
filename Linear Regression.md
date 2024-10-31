@@ -164,7 +164,7 @@
 
 <br/>
 
-## ③ 엘라스틱넷 (ElasticNet)
+### ③ 엘라스틱넷 (ElasticNet)
 
 <br/>
 
