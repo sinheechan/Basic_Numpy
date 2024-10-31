@@ -46,7 +46,7 @@
 
 <br/>
 
-[image0]
+![ML_Basic](image/ML_Basic_0.png)
 
 <br/>
 
@@ -90,7 +90,7 @@
 
 <br/>
 
-[image1]
+![ML_Basic](image/ML_Basic_1.png)
 
 <br/><br/>
 
@@ -106,7 +106,7 @@
 
 <br/>
 
-[image2]
+![ML_Basic](image/ML_Basic_2.png)
 
 <br/><br/>
 
@@ -122,7 +122,7 @@
 
 <br/>
 
-[image3]
+![ML_Basic](image/ML_Basic_3.png)
 
 <br/><br/>
 
@@ -138,7 +138,7 @@
 
 <br/>
 
-[image4]
+![ML_Basic](image/ML_Basic_4.png)
 
 <br/><br/>
 
@@ -166,7 +166,7 @@
 
 <br/>
 
-[image5]
+![ML_Basic](image/ML_Basic_5.png)
 
 <br/><br/>
 
@@ -187,7 +187,7 @@
 - 특이치 탐지 알고리즘은 새로운 치와와 사진을 특이치로 간주하지 않는다.
 <br/>
 
-[image6]
+![ML_Basic](image/ML_Basic_6.png)
 
 <br/><br/>
 
@@ -203,7 +203,7 @@
 
 <br/>
 
-[image7]
+![ML_Basic](image/ML_Basic_7.png)
 
 <br/><br/>
 
@@ -223,7 +223,7 @@
 
 <br/>
 
-[image8]
+![ML_Basic](image/ML_Basic_8.png)
 
 <br/><br/>
 
@@ -239,7 +239,7 @@
 
 <br/>
 
-[image9]
+![ML_Basic](image/ML_Basic_9.png)
 
 <br/><br/>
 
@@ -261,7 +261,7 @@
 
 <br/>
 
-[image10]
+![ML_Basic](image/ML_Basic_10.png)
 
 <br/><br/>
 
@@ -283,7 +283,7 @@
 
 <br/>
 
-[image11]
+![ML_Basic](image/ML_Basic_11.png)
 
 <br/><br/>
 
@@ -309,7 +309,7 @@
 
 <br/>
 
-[image12]
+![ML_Basic](image/ML_Basic_12.png)
 
 <br/><br/>
 
@@ -327,4 +327,4 @@
 
 <br/>
 
-[image13]
+![ML_Basic](image/ML_Basic_13.png)
