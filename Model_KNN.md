@@ -28,7 +28,7 @@
 
 <br/>
 
-[image 0]
+![KNN](image/KNN_0.png)
 
 <br/><br/>
 
