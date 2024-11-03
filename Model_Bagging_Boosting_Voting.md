@@ -20,7 +20,7 @@
 
 <br/>    
 
-[image 0]
+![BBVS](image2/BBVS_0.png)
 
 <br/><br/>
 
@@ -66,7 +66,7 @@
 
 <br/>
 
-[image 1]
+![BBVS](image2/BBVS_1.png)
 
 <br/>
 
@@ -170,7 +170,7 @@
 
 <br/>
 
-[image 2]
+![BBVS](image2/BBVS_2.png)
 
 <br/><br/>
 
@@ -192,7 +192,7 @@
 
 <br/>
 
-[image 3]
+![BBVS](image2/BBVS_3.png)
 
 <br/>
 
@@ -216,7 +216,7 @@
 
 <br/>
 
-[image 4]
+![BBVS](image2/BBVS_4.png)
 
 <br/>
 
@@ -253,7 +253,7 @@
    이제 다른 모델들도 같은 방식으로 y_train_예측값과 y_test_예측값을 구하고, 여러 모델을 반영한 아래 그림의 빨간 상자를 확인하자.
 
 
-[image 5]
+![BBVS](image2/BBVS_5.png)
 
 
 5. 마지막은 최종 모델의 학습데이터 모습이다.
@@ -268,7 +268,7 @@
 
 <br/>
 
-[image 6]
+![BBVS](image2/BBVS_6.png)
 
 <br/>
 
@@ -276,6 +276,6 @@
 
 <br/>
 
-[image 7]
+![BBVS](image2/BBVS_7.png)
 
 <br/>
