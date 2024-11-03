@@ -72,6 +72,10 @@
 
 - 이처럼 여러 개의 결정 트리를 통해 랜덤 포레스트를 만들면 오버피팅 되는 단점을 해결할 수 있다.
 
+<br/>
+
+![Random Forest](image2/randomforest_0.png)
+
 <br/><br/>
 
 ### 3. 랜덤포레스트 장점
@@ -87,9 +91,5 @@
 - 모델의 노이즈를 심화시키는 Overfitting(오버피팅) 문제를 회피하여, 모델 정확도를 향상시킴
 
 - Classification 모델에서 상대적으로 중요한 변수를 선정 및 Ranking 가능
-
-<br/>
-
-[image 0]
 
 <br/>
