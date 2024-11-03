@@ -90,6 +90,6 @@
 
 <br/>
 
-[image 0]
+![Random Forest](image2/randomforest_0.png)
 
 <br/>
